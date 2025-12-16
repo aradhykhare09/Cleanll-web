@@ -65,7 +65,7 @@ const Header = () => {
         
         {/* --- MEGA MENU START --- */}
         <div className="group h-full flex items-center">
-          <Link to="/products" className={`${linkStyle} flex gap-1 items-center`}>
+          <Link to="" className={`${linkStyle} flex gap-1 items-center`}>
             Products <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300"/>
           </Link>
 
