@@ -61,7 +61,7 @@ const PureOneFeatures = () => {
               
               {/* IMAGE PART */}
               <div className="w-full sm:w-2/5 shrink-0">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative">
+                <div className="aspect-4/3 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative">
                   {/* Image Placeholder */}
                   <img 
                     src={feature.image} 

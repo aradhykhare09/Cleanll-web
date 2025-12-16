@@ -74,7 +74,7 @@ const HeroSection = () => {
         }}
       >
         {extendedSlides.map((slide, index) => (
-          <div key={`${slide.id}-${index}`} className="w-full flex-shrink-0 relative h-full">
+          <div key={`${slide.id}-${index}`} className="w-full shrink-0 relative h-full">
             
             <img 
               src={slide.image} 

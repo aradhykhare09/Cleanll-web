@@ -50,7 +50,7 @@ const FoundersLegacy = () => {
 
                 {/* Milestone 1: 1999 */}
                 <div className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
+                  <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
                     <Play size={20} fill="currentColor" />
                   </div>
                   <div>
@@ -63,7 +63,7 @@ const FoundersLegacy = () => {
 
                 {/* Milestone 2: Early 2000s */}
                 <div className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
+                  <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
                     <Play size={20} fill="currentColor" />
                   </div>
                   <div>
@@ -76,7 +76,7 @@ const FoundersLegacy = () => {
 
                 {/* Milestone 3: Present */}
                 <div className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
+                  <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
                     <Play size={20} fill="currentColor" />
                   </div>
                   <div>
