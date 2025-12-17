@@ -6,8 +6,8 @@ const SpaceProduct = () => {
     <section className="py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Layout: Left Image | Right Text */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* FIXED: Changed 'items-center' to 'items-start' for top alignment */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           
           {/* --- LEFT SIDE: IMAGE --- */}
           <div className="relative group">
@@ -15,9 +15,6 @@ const SpaceProduct = () => {
             <div className="absolute -inset-4 bg-gray-200 rounded-full opacity-40 blur-3xl -z-10 group-hover:opacity-60 transition-opacity duration-500"></div>
             
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 relative">
-              {/* Overlay Text on Image (Optional - Jaisa screenshot me tha) */}
-              
-
               {/* IMAGE PLACEHOLDER */}
               <img 
                 src="/products/AquaBreeze_W1.png"
@@ -33,7 +30,7 @@ const SpaceProduct = () => {
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2 self-start bg-black text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6">
               <Rocket size={16} />
-              <span>AquaBreeze Edition</span>
+              <span>AquaBreeze</span>
             </div>
 
             {/* HEADLINE */}
@@ -45,7 +42,7 @@ const SpaceProduct = () => {
             </h2>
             
             {/* Sub-headline from Image */}
-            <p className="text-xl text-gray-600 font-medium mb-8 italic border-l-4 border-black pl-4">
+            <p className="text-xl text-gray-600 font-medium mb-8 italic ">
               "Where human ingenuity meets cosmic precision—a symbol of advanced living."
             </p>
 
@@ -75,7 +72,7 @@ const SpaceProduct = () => {
 
             </div>
 
-            {/* DETAILED TEXT (From Screenshot) */}
+            {/* DETAILED TEXT */}
             <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
               <h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide">
                 Innovation Meets Purity, & The Future Begins Today.

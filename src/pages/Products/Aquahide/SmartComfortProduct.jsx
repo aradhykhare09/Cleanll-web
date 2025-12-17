@@ -6,8 +6,8 @@ const SmartComfortProduct = () => {
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Layout: Left Image | Right Text */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* FIXED: Changed 'items-center' to 'items-start' for top alignment */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           
           {/* --- LEFT SIDE: IMAGE --- */}
           <div className="relative">
@@ -33,7 +33,7 @@ const SmartComfortProduct = () => {
               <span>AquaHide</span>
             </div>
 
-            {/* HEADLINE (Inspired by screenshot features) */}
+            {/* HEADLINE */}
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 uppercase tracking-tight">
               Ultimate Comfort <br />
               <span className="text-gray-900 underline decoration-4 decoration-gray-400 underline-offset-4">
@@ -46,7 +46,7 @@ const SmartComfortProduct = () => {
               "Experience a new level of cleanliness and warmth."
             </p>
 
-            {/* FEATURE ICONS (Based on screenshot text) */}
+            {/* FEATURE ICONS */}
             <div className="grid grid-cols-4 gap-4 mb-10 border-y border-gray-100 py-8">
               
               {/* Seat Heating */}
@@ -83,7 +83,7 @@ const SmartComfortProduct = () => {
 
             </div>
 
-            {/* DETAILED TEXT (Combined from screenshots) */}
+            {/* DETAILED TEXT */}
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
                 Embrace a touchless and comfortable experience. Our smart toilet features <span className="text-gray-900 italic font-semibold">three levels of seat heating</span> for ultimate comfort, ensuring warmth exactly when you need it.

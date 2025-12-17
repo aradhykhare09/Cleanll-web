@@ -6,8 +6,8 @@ const ToiletBidetProduct = () => {
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Layout: Left Image | Right Text */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* FIXED: Changed 'items-center' to 'items-start' for top alignment */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           
           {/* --- LEFT SIDE: IMAGE --- */}
           <div className="relative">
@@ -100,7 +100,6 @@ const ToiletBidetProduct = () => {
                   </p>
                 </div>
               </div>
-
             </div>
 
             {/* DETAILED TEXT */}
@@ -111,7 +110,6 @@ const ToiletBidetProduct = () => {
                 Designed for simplicity and hygiene, it requires no electricity and fits seamlessly onto your existing toilet.
               </p>
             </div>
-
           </div>
 
         </div>

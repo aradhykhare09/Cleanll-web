@@ -6,7 +6,8 @@ const Product = () => {
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* FIXED: Changed 'items-center' to 'items-start' for top alignment */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           
           {/* --- LEFT SIDE: IMAGE --- */}
           <div className="relative">
@@ -77,7 +78,6 @@ const Product = () => {
               </p>
               <p>
                 With features like 
-                {/* Change: font-bold ki jagah 'italic' use kiya */}
                 <span className="text-gray-900 italic"> precision flushing</span>, 
                 <span className="text-gray-900 italic"> nano-silver protection</span>, and an 
                 ergonomic structure designed for the human form, our intelligent smart toilet delivers a seamless fusion of 
