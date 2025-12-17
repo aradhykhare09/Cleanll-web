@@ -2,14 +2,50 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 
 const HeroSection = () => {
+  
   const slides = [
-    { id: 1, image: "/banner/1.png", title: "", subtitle: "" },
-    { id: 2, image: "/banner/Aqua Breeze.png", title: "", subtitle: "" },
-    { id: 3, image: "/banner/Cistern.png", title: "", subtitle: "" },
-    { id: 4, image: "/banner/Lite.png", title: "", subtitle: "" },
-    { id: 5, image: "/banner/Pureone.png", title: "", subtitle: "" },
-    { id: 6, image: "/banner/Sky.png", title: "", subtitle: "" },
-    { id: 7, image: "/banner/Toilet Bidet.png", title: "", subtitle: "" },
+    { 
+      id: 1, 
+      desktopImage: "/banner/Aqua Breeze.png", 
+      mobileImage: "/Vertical/AquaBreze.png", 
+      title: "", 
+      subtitle: "" 
+    },
+    { 
+      id: 2, 
+      desktopImage: "/banner/Cistern.png", 
+      mobileImage: "/Vertical/Cistern.png",
+      title: "", 
+      subtitle: "" 
+    },
+    { 
+      id: 3, 
+      desktopImage: "/banner/Lite.png", 
+      mobileImage: "/Vertical/AquaLite.png",
+      title: "", 
+      subtitle: "" 
+    },
+    { 
+      id: 4, 
+      desktopImage: "/banner/Pureone.png", 
+      mobileImage: "/Vertical/PureOne.png", 
+      title: "", 
+      subtitle: "" 
+    },
+    { 
+      id: 5, 
+      desktopImage: "/banner/Sky.png", 
+      mobileImage: "/Vertical/Aqua Sky.png", 
+      title: "", 
+      subtitle: "" 
+    },
+    { 
+      id: 6, 
+      desktopImage: "/banner/Toilet Bidet.png", 
+      mobileImage: "/Vertical/Bidet.png",
+      title: "", 
+      subtitle: "" 
+    },
   ];
 
   const extendedSlides = [...slides, slides[0]];
@@ -68,7 +104,6 @@ const HeroSection = () => {
       <div 
         className="flex h-full"
         style={{ 
-          
           transition: isTransitioning ? 'transform 700ms ease-in-out' : 'none',
           transform: `translateX(-${currentSlide * 100}%)` 
         }}
@@ -76,14 +111,26 @@ const HeroSection = () => {
         {extendedSlides.map((slide, index) => (
           <div key={`${slide.id}-${index}`} className="w-full shrink-0 relative h-full">
             
+            {/* --- DESKTOP IMAGE --- */}
+            {/* hidden on mobile, block on medium screens and up */}
             <img 
-              src={slide.image} 
+              src={slide.desktopImage} 
               alt={slide.title} 
-              className="w-full h-full object-cover"
+              className="hidden md:block w-full h-full object-cover"
+            />
+
+            {/* --- MOBILE IMAGE --- */}
+            {/* block on mobile, hidden on medium screens and up */}
+            <img 
+              src={slide.mobileImage} 
+              alt={slide.title} 
+              className="block md:hidden w-full h-full object-cover"
             />
             
+            {/* Overlay */}
             <div className="absolute inset-0 bg-black/40"></div>
 
+            {/* Content Text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg tracking-tight">
                 {slide.title}
@@ -96,6 +143,7 @@ const HeroSection = () => {
         ))}
       </div>
 
+      {/* Navigation Buttons */}
       <button 
         onClick={handlePrev}
         className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity z-10"
@@ -110,7 +158,7 @@ const HeroSection = () => {
         <ArrowRight size={24} />
       </button>
 
-     
+      {/* Pagination Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
         {slides.map((_, index) => (
           <div 
