@@ -5,34 +5,39 @@ import { motion } from 'framer-motion';
 
 const AquaSkySection = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    // Added 'font-poppins' to ensure Poppins is used throughout
+    <section className="py-24 bg-white overflow-hidden font-poppins">
+      <div className="w-full max-w-360 mx-auto px-6 md:px-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* Changed grid ratio: Image col-span-7 (approx 60%), Text col-span-5 (approx 40%) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
-          
+          {/* --- LEFT SIDE: IMAGE (Shifted Left & Bigger) --- */}
           <motion.div 
-            className="relative group"
+            className="lg:col-span-7 relative group"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Background Shape */}
-            <div className="absolute inset-0 bg-linear-to-r from-gray-200 to-gray-50 rounded-tr-[100px] rounded-bl-[100px] transform rotate-3 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700 -z-10"></div>
-            
-            {/* Image Container */}
-            <div className="relative rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-2xl border-4 border-white">
-              <img 
+             {/* Negative margin to pull image left and make it bigger */}
+            <div className="relative w-[110%] -ml-[10%] rounded-tr-[100px] rounded-bl-[100px] overflow-hidden">
+               
+               {/* Background Shape */}
+               <div className="absolute inset-0 bg-linear-to-r from-gray-200 to-gray-50 transform rotate-2 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700 -z-10"></div>
+               
+               {/* Image - Removed shadow and border */}
+               <img 
                 src="/Charts/AquaSky 3.png" 
                 alt="AquaSky Intelligent Toilet" 
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 aspect-16/10"
               />
             </div>
           </motion.div>
 
+          {/* --- RIGHT SIDE: CONTENT (Closer to Image) --- */}
           <motion.div 
-            className="flex flex-col text-left space-y-8"
+            className="lg:col-span-5 flex flex-col text-left space-y-5 pl-4 lg:pl-0"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -41,38 +46,27 @@ const AquaSkySection = () => {
             
             {/* Heading */}
             <div>
-              <h3 className="text-sm font-bold tracking-[0.2em] text-gray-900 uppercase mb-3">
-                Smart Series
-              </h3>
-              <h2 className="text-4xl md:text-6xl font-serif text-gray-900 leading-none">
-                AquaSky <span className="text-transparent bg-clip-text bg-linear-to-r from-gray-800 to-gray-500">Intelligent</span>
+              <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 leading-tight">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#080aa1] to-[#c99d80] font-small"> 
+                  AquaSky
+                </span>
               </h2>
             </div>
 
-            {/* Description */}
-            <p className="text-gray-500 text-lg leading-relaxed text-justify">
+            {/* Description - Merged into one paragraph */}
+            <p className="text-gray-500 text-base md:text-md leading-relaxed text-justify">
               Experience a revolutionary innovation in bathroom design. The 
               <span className="text-gray-900 font-semibold"> AquaSky </span> 
-              combines adjustable cleaning ranges, a built-in water tank, and 
-              sensor-based automation to create a unique and stunning visual effect.
-            </p>
-            <p className="text-gray-500 text-lg leading-relaxed text-justify">
-              Its micro-technology ensures a germ-free and dry experience, 
-              reminiscent of crystalline structures found in nature, offering 
-              not just hygiene but a piece of modern art for your home.
+              combines adjustable cleaning ranges and sensor-based automation to create a stunning visual effect. Its micro-technology ensures a germ-free experience, reminiscent of crystalline structures found in nature.
             </p>
 
             {/* "Discover More" Button */}
             <div className="pt-4">
               <Link 
                 to="/aquasky" 
-                className="inline-flex items-center gap-3 text-lg font-bold text-gray-900 hover:text-gray-600 transition-colors group"
+                className="inline-flex items-center gap-2 text-lg font-semibold text-[#c99d80] hover:text-[#080aa1] transition-colors group"
               >
                 <span>Discover More</span>
-                {/* Arrow BG changed to Black on Hover */}
-                <span className="p-2 bg-gray-100 rounded-full group-hover:bg-black group-hover:text-white transition-all duration-300">
-                  <ArrowRight size={20} className="transform group-hover:translate-x-1 transition-transform" />
-                </span>
               </Link>
             </div>
 

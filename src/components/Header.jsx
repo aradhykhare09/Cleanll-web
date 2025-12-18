@@ -48,7 +48,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full h-20 bg-white shadow-sm flex items-center justify-between border-b border-gray-200">
       
       {/* 1. Left Side (Logo) */}
-      <div className="flex-1 flex justify-start items-center gap-3 ml-4 md:ml-24">
+      <div className="flex-1 flex justify-start items-center gap-3 ml-4 md:ml-8">
         <Link to="/" onClick={closeMenu}> 
           <img 
             src="/L2.png" 
@@ -65,7 +65,7 @@ const Header = () => {
         
         {/* --- MEGA MENU START --- */}
         <div className="group h-full flex items-center">
-          <Link to="" className={`${linkStyle} flex gap-1 items-center`}>
+          <Link to="#" className={`${linkStyle} flex gap-1 items-center`}>
             Products <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300"/>
           </Link>
 

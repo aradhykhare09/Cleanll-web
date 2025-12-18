@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// --- 1. SMART IMAGE COMPONENT ---
-// (Skeleton loader + Smooth Fade-in logic)
+// --- 1. SUPER SMART IMAGE COMPONENT ---
 const FeatureImage = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="aspect-4/3 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative bg-gray-100">
+    // Explicit sizing wrapper to prevent layout shift
+    <div className="aspect-4/3 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative bg-gray-100 w-full h-full">
       
-      {/* SKELETON: Gray pulse until image loads */}
+      {/* SKELETON LOADER (Visible until loaded) */}
       <div 
-        className={`absolute inset-0 bg-gray-200 animate-pulse transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-gray-200 animate-pulse z-10 transition-opacity duration-700 ${
           isLoaded ? 'opacity-0' : 'opacity-100'
         }`} 
       />
@@ -20,15 +20,17 @@ const FeatureImage = ({ src, alt }) => {
       <img 
         src={src} 
         alt={alt}
-        loading="lazy"
+        loading="lazy" // Native browser lazy loading
+        width="400"    // Helps browser allocate space immediately
+        height="300"
         onLoad={() => setIsLoaded(true)}
-        className={`w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 ease-in-out
-          ${isLoaded ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'} 
+        className={`w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 ease-in-out will-change-transform
+          ${isLoaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-lg scale-95'} 
         `} 
       />
 
       {/* Overlay for depth */}
-      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-20 pointer-events-none"></div>
     </div>
   );
 };
@@ -36,6 +38,7 @@ const FeatureImage = ({ src, alt }) => {
 
 // --- 2. MAIN COMPONENT ---
 const PureOneFeatures = () => {
+  // Check that your .webp or .png files exist in these paths
   const features = [
     {
       id: 1,
@@ -82,14 +85,14 @@ const PureOneFeatures = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15 // Har feature 0.15s ke gap pe aayega
+        staggerChildren: 0.15 
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
   return (
@@ -126,7 +129,7 @@ const PureOneFeatures = () => {
               variants={itemVariants}
             >
               
-              {/* IMAGE PART (Using Smart Component) */}
+              {/* IMAGE PART (Using Super Smart Component) */}
               <div className="w-full sm:w-2/5 shrink-0">
                 <FeatureImage src={feature.image} alt={feature.title} />
               </div>

@@ -116,7 +116,7 @@ const CisternAdv = () => {
 
         {/* Features Grid - 2 Columns */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 "
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -125,7 +125,7 @@ const CisternAdv = () => {
           {advantages.map((item) => (
             <motion.div 
               key={item.id} 
-              className="flex flex-row gap-6 items-start group"
+              className="flex flex-row gap-6 items-start group "
               variants={itemVariants}
             >
               {/* ICON */}

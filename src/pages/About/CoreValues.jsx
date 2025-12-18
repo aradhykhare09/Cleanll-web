@@ -90,7 +90,7 @@ const CoreValues = () => {
               key={value.id} 
               variants={cardVariants}
               whileHover={{ y: -5 }} // Hover karne par card thoda upar uthega
-              className="bg-[#faf9f6] p-10 md:p-12 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group"
+              className="bg-[#f4f1ea] p-10 md:p-12 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group"
             >
               {/* IMAGE ICON CONTAINER */}
               <div className="mb-6 h-16 w-16 flex items-center justify-center">

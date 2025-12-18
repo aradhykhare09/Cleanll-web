@@ -128,7 +128,7 @@ const HeroSection = () => {
             />
             
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 "></div>
 
             {/* Content Text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
