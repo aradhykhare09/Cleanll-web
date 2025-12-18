@@ -1,5 +1,6 @@
 import React from 'react';
 import { Play } from 'lucide-react';
+import { motion } from 'framer-motion'; // 1. Import Framer Motion
 
 const FoundersLegacy = () => {
   return (
@@ -9,7 +10,14 @@ const FoundersLegacy = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
           {/* --- LEFT SIDE: TITLE & BLUE ACCENT --- */}
-          <div className="lg:col-span-4 relative">
+          {/* Animation: Slide In from Left */}
+          <motion.div 
+            className="lg:col-span-4 relative"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {/* Blue Block Accent (Decorative) */}
             <div className="absolute top-0 left-0 w-20 h-full bg-blue-900/5 -z-10 rounded-r-3xl hidden lg:block"></div>
             
@@ -22,10 +30,17 @@ const FoundersLegacy = () => {
               </h2>
               <div className="h-1.5 w-24 bg-[#232323] rounded-full"></div>
             </div>
-          </div>
+          </motion.div>
 
           {/* --- RIGHT SIDE: CONTENT & TIMELINE --- */}
-          <div className="lg:col-span-8">
+          {/* Animation: Slide In from Right */}
+          <motion.div 
+            className="lg:col-span-8"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Slight delay for better flow
+            viewport={{ once: true, amount: 0.3 }}
+          >
             
             {/* Main Paragraph */}
             <div className="prose prose-lg text-gray-600 leading-relaxed mb-16 text-justify">
@@ -46,10 +61,28 @@ const FoundersLegacy = () => {
               <div className="hidden md:block absolute top-6 left-0 w-full h-0.5 border-t-2 border-dashed border-blue-200 z-0"></div>
               <div className="md:hidden absolute left-6 top-0 h-full w-0.5 border-l-2 border-dashed border-blue-200 z-0"></div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+              {/* Staggered Animation for Timeline Items */}
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.3 // Ek ke baad ek aayenge (0.3s gap)
+                    }
+                  }
+                }}
+              >
 
                 {/* Milestone 1: 1999 */}
-                <div className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl">
+                <motion.div 
+                  className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl"
+                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                >
                   <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
                     <Play size={20} fill="currentColor" />
                   </div>
@@ -59,10 +92,13 @@ const FoundersLegacy = () => {
                       First to manufacture split AC indoor units and cross flow fans in India.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Milestone 2: Early 2000s */}
-                <div className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl">
+                <motion.div 
+                  className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl"
+                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                >
                   <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
                     <Play size={20} fill="currentColor" />
                   </div>
@@ -72,10 +108,13 @@ const FoundersLegacy = () => {
                       Introduced micro channel heat exchangers and header pipes.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Milestone 3: Present */}
-                <div className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl">
+                <motion.div 
+                  className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl"
+                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                >
                   <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
                     <Play size={20} fill="currentColor" />
                   </div>
@@ -85,11 +124,11 @@ const FoundersLegacy = () => {
                       First to launch and produce smart toilets in India, integrating intelligent flushing, bidet functions & hygienic automation.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

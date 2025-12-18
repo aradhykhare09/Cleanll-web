@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion'; // 1. Import Framer Motion
+import { motion } from 'framer-motion'; 
 
 const AquaSkySection = () => {
   return (
@@ -10,8 +10,7 @@ const AquaSkySection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           
-          {/* --- LEFT SIDE: IMAGE --- */}
-          {/* Added motion.div: Slides in from LEFT (-100px) */}
+          
           <motion.div 
             className="relative group"
             initial={{ opacity: 0, x: -100 }}
@@ -32,8 +31,6 @@ const AquaSkySection = () => {
             </div>
           </motion.div>
 
-          {/* --- RIGHT SIDE: CONTENT --- */}
-          {/* Added motion.div: Slides in from RIGHT (100px) */}
           <motion.div 
             className="flex flex-col text-left space-y-8"
             initial={{ opacity: 0, x: 100 }}

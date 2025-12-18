@@ -1,5 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
+// --- 1. SMART IMAGE COMPONENT (Integrated) ---
+const FeatureImage = ({ src, alt }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="aspect-4/3 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative bg-gray-100">
+      
+      {/* SKELETON: Gray pulse until image loads */}
+      <div 
+        className={`absolute inset-0 bg-gray-200 animate-pulse transition-opacity duration-500 ${
+          isLoaded ? 'opacity-0' : 'opacity-100'
+        }`} 
+      />
+
+      {/* ACTUAL IMAGE */}
+      <img 
+        src={src} 
+        alt={alt}
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        className={`w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 ease-in-out
+          ${isLoaded ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'} 
+        `} 
+      />
+
+      {/* Overlay for depth */}
+      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+    </div>
+  );
+};
+
+
+// --- 2. MAIN COMPONENT ---
 const FeaturesSection = () => {
   // Data from your screenshot
   const features = [
@@ -59,36 +93,60 @@ const FeaturesSection = () => {
     }
   ];
 
+  // Container Variant for Staggering
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15 // Har feature 0.15s ke gap pe aayega
+      }
+    }
+  };
+
+  // Item Variant for Slide Up
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Section Heading */}
-        <div className="mb-16 text-center">
+        {/* Section Heading - Slide Up */}
+        <motion.div 
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight">
             Advanced <span className="italic font-serif">Features</span>
           </h2>
           <div className="h-1 w-20 bg-black mx-auto mt-4"></div>
-        </div>
+        </motion.div>
 
-        {/* Features Grid: 2 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        {/* Features Grid - Staggered Animation */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           
           {features.map((feature) => (
-            <div key={feature.id} className="flex flex-col sm:flex-row gap-6 items-start group">
+            <motion.div 
+              key={feature.id} 
+              className="flex flex-col sm:flex-row gap-6 items-start group"
+              variants={itemVariants}
+            >
               
-              {/* IMAGE PART */}
+              {/* IMAGE PART (Replaced with Smart Component) */}
               <div className="w-full sm:w-2/5 shrink-0">
-                <div className="aspect-4/3 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative">
-                  {/* Image Placeholder */}
-                  <img 
-                    src={feature.image} 
-                    alt={feature.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-                  {/* Overlay for depth */}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
-                </div>
+                <FeatureImage src={feature.image} alt={feature.title} />
               </div>
 
               {/* TEXT PART */}
@@ -101,10 +159,10 @@ const FeaturesSection = () => {
                 </p>
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
