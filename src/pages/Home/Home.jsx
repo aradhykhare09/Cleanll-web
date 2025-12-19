@@ -6,6 +6,7 @@ import AquaLiteSection from './AquaLiteSection'
 import PureOneSection from './PureOneSection'
 import AquaHideSection from './AquaHideSection'
 import BidetSection from './BidetSection'
+import BannerImage from './BannerImage'
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <PureOneSection/>
       <AquaHideSection/>
       <BidetSection/>
+      <BannerImage/>
     </div>
   )
 }

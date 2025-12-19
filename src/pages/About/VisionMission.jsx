@@ -1,13 +1,13 @@
 import React from 'react';
 import { Globe, ShieldCheck } from 'lucide-react';
-import { motion } from 'framer-motion'; // 1. Import Framer Motion
+import { motion } from 'framer-motion'; 
 
 const VisionMission = () => {
   return (
-    <section className="py-24 bg-[#2e4a85] text-white overflow-hidden relative">
+    // Applied 'font-poppins' and standard padding
+    <section className="py-24 bg-[#354E9B] text-white overflow-hidden relative font-poppins">
       
       {/* --- BACKGROUND ANIMATION --- */}
-      {/* Pulse Effect on Background Blobs */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <motion.div 
           className="absolute right-0 top-0 w-96 h-96 bg-white rounded-full blur-[150px] mix-blend-overlay"
@@ -26,7 +26,6 @@ const VisionMission = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
 
           {/* --- VISION SECTION (Left) --- */}
-          {/* Animation: Fade Up with Stagger */}
           <motion.div 
             className="flex flex-col items-start space-y-6"
             initial={{ opacity: 0, y: 50 }}
@@ -43,22 +42,23 @@ const VisionMission = () => {
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight leading-tight">
+            {/* Heading: Master Size (3xl mobile, 5xl desktop), Font Light */}
+            <h2 className="text-3xl md:text-3xl lg:text-5xl font-light tracking-tight leading-tight">
               RISE FORWARD
             </h2>
 
-            <p className="text-blue-50 text-lg leading-relaxed opacity-90 text-justify">
+            {/* Body: Master Size (base mobile, md desktop) */}
+            <p className="text-blue-50 text-base md:text-md leading-relaxed opacity-90 text-justify">
               To empower <span className="font-bold text-white">India</span> as a global benchmark for smart, sustainable sanitary solutions by continually innovating, manufacturing <span className="font-bold text-white">locally</span>, and integrating intelligent features that elevate hygiene and comfort for every household, builder, architect, and interior designer.
             </p>
           </motion.div>
 
           {/* --- MISSION SECTION (Right) --- */}
-          {/* Animation: Fade Up with Delay */}
           <motion.div 
             className="flex flex-col items-start space-y-6 md:border-l md:border-blue-400/30 md:pl-16 lg:pl-24"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Slight delay ensures Vision comes first
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} 
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex items-center gap-3 mb-2">
@@ -70,11 +70,13 @@ const VisionMission = () => {
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight leading-tight">
+            {/* Heading: Master Size */}
+            <h2 className="text-3xl md:text-3xl lg:text-5xl font-light tracking-tight leading-tight">
               OUR PLEDGE
             </h2>
 
-            <p className="text-blue-50 text-lg leading-relaxed opacity-90 text-justify">
+            {/* Body: Master Size */}
+            <p className="text-blue-50 text-base md:text-md leading-relaxed opacity-90 text-justify">
               <span className="font-bold text-white">Cleanll’s</span> mission is to deliver technologically advanced, reliable, and affordable smart sanitary products that enrich user experience, promote health and hygiene, and contribute to <span className="font-bold text-white">sustainable living</span>. The company is committed to delivering quality with warranty and guarantee, providing exceptional value for end-users and professionals alike.
             </p>
           </motion.div>

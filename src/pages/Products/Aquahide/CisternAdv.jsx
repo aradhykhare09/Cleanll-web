@@ -80,27 +80,28 @@ const CisternAdv = () => {
     }
   ];
 
-  // Animation Variants (Same as other Feature Sections)
+  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15 // Cards ek ke baad ek aayenge
+        staggerChildren: 0.15 
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 }, // Slide Up
+    hidden: { opacity: 0, y: 20 }, 
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
   return (
-    <section className="py-20 bg-[#f4f1ea] overflow-hidden">
+    // Applied 'font-poppins' and 'py-24'
+    <section className="py-24 bg-[#f4f1ea] overflow-hidden font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Section Heading - Slide Up */}
+        {/* Section Heading - Master Size, No Serif */}
         <motion.div 
           className="mb-16 text-center"
           initial={{ opacity: 0, y: -20 }}
@@ -108,10 +109,10 @@ const CisternAdv = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight">
-            Advantages of a <br className="md:hidden"/> <span className="italic font-serif">Concealed Cistern</span>
+          <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 uppercase tracking-tight">
+            Advantages of a <br className="md:hidden"/> <span className="font-medium">Concealed Cistern</span>
           </h2>
-          <div className="h-1 w-20 bg-black mx-auto mt-4"></div>
+          {/* Removed underline/divider */}
         </motion.div>
 
         {/* Features Grid - 2 Columns */}
@@ -136,7 +137,8 @@ const CisternAdv = () => {
                 <h3 className="text-xl font-bold text-[#4a3b32] group-hover:text-black transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                {/* Updated to Master Body Size (text-md) */}
+                <p className="text-gray-600 text-base md:text-md leading-relaxed">
                   {item.desc}
                 </p>
               </div>

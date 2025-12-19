@@ -11,11 +11,20 @@ const Header = () => {
     setIsMobileProductsOpen(false);
   };
 
+  // Function to scroll to Footer
+  const scrollToFooter = (e) => {
+    e.preventDefault(); // Prevent navigation
+    closeMenu(); // Close mobile menu if open
+    window.scrollTo({
+      top: document.body.scrollHeight, // Scroll to bottom of page
+      behavior: 'smooth'
+    });
+  };
+
   // 1. MAIN HEADER LINK STYLE (Underline Effect)
   const linkStyle = "h-full flex items-center text-gray-900 font-semibold relative after:content-[''] after:absolute after:left-0 after:bottom-[20px] after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full cursor-pointer";
 
-  // 2. DROPDOWN ITEM STYLE (Underline Effect - No Blue)
-  // 'w-fit' zaroori hai taaki underline sirf text ke neeche aaye, poore dabba ke neeche nahi
+  // 2. DROPDOWN ITEM STYLE
   const dropdownLinkStyle = "text-gray-600 hover:text-gray-900 text-sm font-medium w-fit relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[1px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full";
 
   const mobileLinkStyle = "text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors";
@@ -45,7 +54,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full h-20 bg-white shadow-sm flex items-center justify-between border-b border-gray-200">
+    <header className="sticky top-0 z-50 w-full h-20 bg-white shadow-sm flex items-center justify-between border-b border-gray-200 font-poppins">
       
       {/* 1. Left Side (Logo) */}
       <div className="flex-1 flex justify-start items-center gap-3 ml-4 md:ml-8">
@@ -85,7 +94,6 @@ const Header = () => {
                         <Link 
                           key={idx} 
                           to={item.link} 
-                          // Modified Style Applied Here
                           className={dropdownLinkStyle}
                         >
                           {item.name}
@@ -98,12 +106,16 @@ const Header = () => {
               </div>
               
               <div className="mt-8 pt-4 border-t border-gray-100 text-right">
-                 
               </div>
             </div>
           </div>
         </div>
         {/* --- MEGA MENU END --- */}
+
+        {/* CONNECT LINK (Desktop) */}
+        <a href="#footer" onClick={scrollToFooter} className={linkStyle}>
+            Connect
+        </a>
 
       </nav>
 
@@ -142,14 +154,14 @@ const Header = () => {
                   <div key={i}>
                     <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">{cat.title}</p>
                     {cat.items.map((item, j) => (
-                       <Link 
-                         key={j} 
-                         to={item.link} 
-                         onClick={closeMenu} 
-                         className="block text-gray-800 py-1 hover:text-gray-500 font-medium"
-                       >
-                         {item.name}
-                       </Link>
+                        <Link 
+                          key={j} 
+                          to={item.link} 
+                          onClick={closeMenu} 
+                          className="block text-gray-800 py-1 hover:text-gray-500 font-medium"
+                        >
+                          {item.name}
+                        </Link>
                     ))}
                   </div>
                 ))}
@@ -157,6 +169,11 @@ const Header = () => {
               </div>
             )}
           </div>
+
+          {/* CONNECT LINK (Mobile) */}
+          <a href="#footer" onClick={scrollToFooter} className={`${mobileLinkStyle} mb-6`}>
+             Connect
+          </a>
 
         </div>
       )}

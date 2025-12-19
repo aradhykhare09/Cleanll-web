@@ -5,22 +5,22 @@ import { motion } from 'framer-motion';
 
 const AquaBreezeSection = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden font-poppins">
+    <section className="py-12 bg-white overflow-hidden font-poppins">
       <div className="w-full max-w-360 mx-auto px-6 md:px-12">
         
-        {/* Grid: Text (5 cols) - Image (7 cols) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Grid: Standard 2-column layout with equal gap (Balanced) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           
-          {/* --- LEFT SIDE: CONTENT (Text takes ~40%) --- */}
+          {/* --- LEFT SIDE: CONTENT --- */}
           <motion.div 
-            className="lg:col-span-5 flex flex-col text-left space-y-5 pr-4 lg:pr-0 order-2 lg:order-1"
+            className="flex flex-col text-left space-y-5 pr-4 lg:pr-0 order-2 md:order-1"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
             
-            {/* Heading - Locked Master Sizes */}
+            {/* Heading */}
             <div>
               <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 leading-tight">
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#080aa1] to-[#c99d80] font-medium"> 
@@ -29,7 +29,7 @@ const AquaBreezeSection = () => {
               </h2>
             </div>
 
-            {/* Description - Merged & Justified */}
+            {/* Description */}
             <p className="text-gray-500 text-base md:text-md leading-relaxed text-justify">
               Redefine your daily routine with the <span className="text-gray-900 font-semibold">AquaBreeze</span>. 
               Designed for those who prioritize freshness and airflow, this model integrates advanced air-drying technology with precision washing. The seamless design hides a powerful engine that delivers instant warmth and unmatched hygiene, ensuring a breezy, comfortable experience every time you step in.
@@ -47,26 +47,26 @@ const AquaBreezeSection = () => {
 
           </motion.div>
 
-          {/* --- RIGHT SIDE: IMAGE (Image takes ~60%, Shifted Right) --- */}
+          {/* --- RIGHT SIDE: IMAGE (Square & Balanced) --- */}
           <motion.div 
-            className="lg:col-span-7 relative group order-1 lg:order-2"
+            className="relative group order-1 md:order-2"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Negative margin to pull image RIGHT (-mr) */}
-            <div className="relative w-[110%] ml-auto -mr-[10%] rounded-tl-[100px] rounded-br-[100px] overflow-hidden">
-              
-              {/* Background Shape */}
-              <div className="absolute inset-0 bg-linear-to-l from-gray-200 to-gray-50 transform -rotate-2 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700 -z-10"></div>
-              
-              {/* Image - No Shadow/Border */}
-              <img 
-                src="/Charts/Aqua Breeze.png" 
-                alt="AquaBreeze Smart Toilet" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 aspect-16/10"
-              />
+             {/* Image Container - Square Aspect Ratio */}
+             <div className="relative w-full aspect-square rounded-tl-[100px] rounded-br-[100px] overflow-hidden">
+                
+                {/* Background Shape */}
+                <div className="absolute inset-0 bg-linear-to-l from-gray-200 to-gray-50 transform -rotate-2 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700 -z-10"></div>
+                
+                {/* Image - No Shadow/Border, Square */}
+                <img 
+                  src="/homeproduct/AquaBreeze.png" 
+                  alt="AquaBreeze Smart Toilet" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                />
             </div>
           </motion.div>
 

@@ -20,8 +20,8 @@ const FeatureImage = ({ src, alt }) => {
       <img 
         src={src} 
         alt={alt}
-        loading="lazy" // Native browser lazy loading
-        width="400"    // Helps browser allocate space immediately
+        loading="lazy" 
+        width="400"    
         height="300"
         onLoad={() => setIsLoaded(true)}
         className={`w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 ease-in-out will-change-transform
@@ -96,10 +96,11 @@ const PureOneFeatures = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    // Applied 'font-poppins' and 'py-24'
+    <section className="py-24 bg-white font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Section Heading - Slide Up */}
+        {/* Section Heading - Master Size, No Serif */}
         <motion.div 
           className="mb-16 text-center"
           initial={{ opacity: 0, y: -20 }}
@@ -107,10 +108,10 @@ const PureOneFeatures = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight">
-            Advanced <span className="italic font-serif">Capabilities</span>
+          <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 uppercase tracking-tight">
+            Advanced <span className="font-medium">Capabilities</span>
           </h2>
-          <div className="h-1 w-20 bg-black mx-auto mt-4"></div>
+          {/* Removed underline/divider */}
         </motion.div>
 
         {/* Features Grid - Staggered Animation */}
@@ -136,10 +137,12 @@ const PureOneFeatures = () => {
 
               {/* TEXT PART */}
               <div className="w-full sm:w-3/5">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:underline decoration-1 underline-offset-4">
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                {/* Desc - Updated to Master Body Size (text-md) */}
+                <p className="text-gray-600 text-base md:text-md leading-relaxed">
                   {feature.desc}
                 </p>
               </div>

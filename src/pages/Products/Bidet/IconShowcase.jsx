@@ -9,32 +9,29 @@ const IconItem = ({ src, title }) => {
     <div className="flex flex-col items-center text-center gap-4 group">
       
       {/* Icon Circle */}
-      {/* Changes: Border dark kiya, BG white kiya, aur shadow add ki */}
       <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full border border-black/10 flex items-center justify-center bg-white shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
         
-        {/* Skeleton Loader (Gray instead of white) */}
+        {/* Skeleton Loader */}
         <div 
           className={`absolute inset-0 bg-gray-200 rounded-full animate-pulse transition-opacity duration-500 ${
             isLoaded ? 'opacity-0' : 'opacity-100'
           }`} 
         />
         
-        {/* Icon Image */}
-        {/* Changes: Size badhaya (w-12/w-14) aur filter change kiya black karne ke liye */}
+        {/* Icon Image - Black Filter applied */}
         <img 
           src={src} 
           alt={title}
           loading="lazy"
           onLoad={() => setIsLoaded(true)}
-          className={`w-12 h-12 md:w-18 md:h-18 object-contain filter brightness-0 transition-all duration-500 ${
+          className={`w-12 h-12 md:w-14 md:h-14 object-contain filter brightness-0 transition-all duration-500 ${
             isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`} 
         />
       </div>
 
-      {/* Label */}
-      {/* Change: Text color dark kiya */}
-      <span className="text-gray-900 text-xs md:text-sm font-bold tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity">
+      {/* Label - Using Poppins */}
+      <span className="text-gray-900 text-xs md:text-sm font-bold tracking-wider uppercase opacity-80 group-hover:opacity-100 transition-opacity font-poppins">
         {title}
       </span>
     </div>
@@ -59,7 +56,7 @@ const IconShowcase = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1 // Ek ke baad ek aayenge
+        staggerChildren: 0.1 
       }
     }
   };
@@ -70,9 +67,9 @@ const IconShowcase = () => {
   };
 
   return (
-    // Change: Background color updated to #f4f1ea
-    <section className="py-16 bg-[#f4f1ea]">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    // Applied 'font-poppins' and consistent padding
+    <section className="py-20 bg-[#f4f1ea] font-poppins overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Responsive Grid */}
         <motion.div 

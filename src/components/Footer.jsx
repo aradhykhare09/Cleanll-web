@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Globe } from 'lucide-react';
 
 const Footer = () => {
   
-  // Product Data (Same as Header)
+  // Product Data
   const productCategories = [
     {
       title: "Smart Toilet",
@@ -30,15 +30,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#232323] text-white pt-16 pb-8">
+    <footer className="bg-[#232323] text-white pt-16 pb-8 font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Top Section: Grid Layout (Changed to 4 Columns for better fit) */}
+        {/* Top Section: Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           
           {/* --- Column 1: Brand Info --- */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">CLEANLL</h2>
+            <h2 className="text-2xl font-bold tracking-tight uppercase">Cleanll Industries</h2>
             <p className="text-gray-400 text-sm leading-relaxed">
               Bringing innovation to your doorstep. We create seamless digital experiences with modern technology.
             </p>
@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* --- Column 2: Smart Toilets (Category 1) --- */}
+          {/* --- Column 2: Smart Toilets --- */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-white">{productCategories[0].title}</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
@@ -72,7 +72,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* --- Column 3: Other Products & Quick Links --- */}
+          {/* --- Column 3: Other Products & Company --- */}
           <div>
             {/* Cisterns */}
             <h3 className="text-lg font-semibold mb-4 text-white">{productCategories[1].title}</h3>
@@ -98,7 +98,7 @@ const Footer = () => {
               ))}
             </ul>
 
-            {/* Quick Links (Merged here to save space) */}
+            {/* Company */}
             <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
                <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
@@ -106,22 +106,43 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* --- Column 4: Contact Info --- */}
+          {/* --- Column 4: Contact Info (Updated from Image) --- */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-white">Contact Us</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
+              
+              {/* Address */}
               <li className="flex items-start gap-3">
-                <MapPin size={20} className="text-white shrink-0" />
-                <span>123 Innovation Drive, Tech City, India 201301</span>
+                <MapPin size={20} className="text-white shrink-0 mt-1" />
+                <span>
+                  C-13A, Focal Point, 1st Floor,<br/> 
+                  Industrial Area, Derra Bassi,<br/> 
+                  SAS Nagar, Punjab-140 507, INDIA
+                </span>
               </li>
+
+              {/* Phone */}
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-white shrink-0" />
-                <span>+91 9811099841</span>
+                <span>+91 911 554 4233</span>
               </li>
+
+              {/* Email */}
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-white shrink-0" />
-                <span>contact@cleanll.com</span>
+                <a href="mailto:info@cleanll.com" className="hover:text-white transition-colors">
+                  info@cleanll.com
+                </a>
               </li>
+
+              {/* Website */}
+              <li className="flex items-center gap-3">
+                <Globe size={20} className="text-white shrink-0" />
+                <a href="https://www.cleanll.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  www.cleanll.com
+                </a>
+              </li>
+
             </ul>
           </div>
 
@@ -129,10 +150,7 @@ const Footer = () => {
 
         {/* Bottom Bar: Copyright */}
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>© 2025 Cleanll. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-
-          </div>
+          <p>© 2025 Cleanll Industries. All rights reserved.</p>
         </div>
 
       </div>

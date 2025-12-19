@@ -1,134 +1,127 @@
 import React from 'react';
 import { Play } from 'lucide-react';
-import { motion } from 'framer-motion'; // 1. Import Framer Motion
+import { motion } from 'framer-motion';
 
 const FoundersLegacy = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-18 bg-white overflow-hidden font-poppins ">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
-          {/* --- LEFT SIDE: TITLE & BLUE ACCENT --- */}
-          {/* Animation: Slide In from Left */}
+          {/* --- LEFT SIDE: IMAGES --- */}
+          {/* Height adjusted for responsiveness: h-[400px] on mobile, h-[500px] on desktop */}
           <motion.div 
-            className="lg:col-span-4 relative"
+            className="relative h-100 md:h-125 w-full"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Blue Block Accent (Decorative) */}
-            <div className="absolute top-0 left-0 w-20 h-full bg-blue-900/5 -z-10 rounded-r-3xl hidden lg:block"></div>
-            
-            <div className="pt-8">
-              <h4 className="text-sm font-bold tracking-[0.3em] text-gray-500 uppercase mb-2">
-                Founder’s
-              </h4>
-              <h2 className="text-6xl md:text-8xl font-serif text-gray-900 tracking-tighter leading-none mb-6">
-                LEGACY
-              </h2>
-              <div className="h-1.5 w-24 bg-[#232323] rounded-full"></div>
+            {/* Image 1: Background (2B.png) */}
+            {/* Mobile: Full Width, Desktop: 85% Width */}
+            <div className="absolute top-0 left-0 w-full lg:w-[85%] h-full rounded-3xl overflow-hidden z-0 transition-all duration-500">
+               <img 
+                 src="/2B.png" 
+                 className="w-full h-full object-cover" 
+                 alt="Legacy Background" 
+               />
+            </div>
+
+            {/* Image 2: Overlay (2A.png) */}
+            {/* RESPONSIVE LOGIC:
+                - Mobile/Tablet: Centered (left-1/2 -translate-x-1/2)
+                - Desktop (lg): Right Aligned (right-0 translate-x-0 left-auto)
+            */}
+            <div className="absolute top-1/2 -translate-y-1/2 
+                            left-1/2 -translate-x-1/2 w-[70%] h-[50%] 
+                            lg:left-auto lg:right-0 lg:translate-x-0 lg:w-[55%] lg:h-[60%] 
+                            rounded-3xl overflow-hidden shadow-2xl z-10 transition-all duration-500 ease-in-out">
+               <img 
+                 src="/2A.png" 
+                 className="w-full h-full object-cover" 
+                 alt="Founder Detail" 
+               />
             </div>
           </motion.div>
 
-          {/* --- RIGHT SIDE: CONTENT & TIMELINE --- */}
-          {/* Animation: Slide In from Right */}
+
+          {/* --- RIGHT SIDE: CONTENT --- */}
           <motion.div 
-            className="lg:col-span-8"
+            className="flex flex-col text-center lg:text-left"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Slight delay for better flow
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             
-            {/* Main Paragraph */}
-            <div className="prose prose-lg text-gray-600 leading-relaxed mb-16 text-justify">
-              <p className="mb-6">
-                Cleanll’s leadership carries a <span className="text-gray-900 font-semibold">legacy of firsts</span>—from revolutionizing India’s HVAC landscape with advanced split AC units, cross-flow fans, and micro-channel heat exchangers, to creating the nation’s first fully Made-in-India smart toilet.
+            {/* HEADING SECTION */}
+            <div className="mb-10">
+              <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 leading-tight">
+                FOUNDER'S <br />
+                LEGACY
+              </h2>
+            </div>
+
+            {/* DESCRIPTION */}
+            <div className="text-gray-600 text-md leading-relaxed mb-12 space-y-6 text-justify lg:text-left">
+              <p>
+                Cleanll’s leadership carries a <span className="text-gray-900 font-medium">legacy of firsts</span>—from revolutionizing India’s HVAC landscape with advanced split AC units to creating the nation’s first fully Made-in-India smart toilet.
               </p>
               <p>
-                Their pioneering vision fuels Cleanll’s relentless drive for innovation and unmatched market insight, inspiring a culture of excellence where <span className="italic text-gray-800">engineering precision, sustainable thinking, and customer-centric design</span> come together.
-              </p>
-              <p>
-                This forward-looking legacy not only shapes the brand’s direction but also sets new benchmarks for India’s smart sanitary future.
+                Their pioneering vision fuels a culture where <span className="text-gray-900 font-medium">engineering precision, sustainable thinking, and customer-centric design</span> come together.
               </p>
             </div>
 
             {/* --- TIMELINE SECTION --- */}
-            <div className="relative">
-              {/* Connecting Line (Desktop: Horizontal, Mobile: Vertical) */}
-              <div className="hidden md:block absolute top-6 left-0 w-full h-0.5 border-t-2 border-dashed border-blue-200 z-0"></div>
-              <div className="md:hidden absolute left-6 top-0 h-full w-0.5 border-l-2 border-dashed border-blue-200 z-0"></div>
+            <div className="relative pt-4">
+              
+              {/* Dotted Connecting Line (Desktop) */}
+              <div className="hidden lg:block absolute top-7 left-6 right-6 border-t-2 border-dashed border-blue-200 -z-10"></div>
+              
+              {/* Dotted Connecting Line (Mobile) */}
+              <div className="lg:hidden absolute left-6 top-6 bottom-6 border-l-2 border-dashed border-blue-200 -z-10"></div>
 
-              {/* Staggered Animation for Timeline Items */}
-              <motion.div 
-                className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      staggerChildren: 0.3 // Ek ke baad ek aayenge (0.3s gap)
-                    }
-                  }
-                }}
-              >
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                {/* Milestone 1 */}
+                <div className="relative flex flex-row lg:flex-col items-center lg:items-start gap-6 lg:gap-4">
+                  <div className="w-14 h-14 rounded-full bg-blue-900 text-white flex items-center justify-center shadow-lg shrink-0 z-10 border-4 border-white">
+                      <Play size={20} fill="currentColor" />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">1999</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">First to manufacture split AC indoor units & cross flow fans in India.</p>
+                  </div>
+                </div>
 
-                {/* Milestone 1: 1999 */}
-                <motion.div 
-                  className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl"
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                >
-                  <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
-                    <Play size={20} fill="currentColor" />
+                {/* Milestone 2 */}
+                <div className="relative flex flex-row lg:flex-col items-center lg:items-start gap-6 lg:gap-4">
+                   <div className="w-14 h-14 rounded-full bg-blue-900 text-white flex items-center justify-center shadow-lg shrink-0 z-10 border-4 border-white">
+                      <Play size={20} fill="currentColor" />
                   </div>
-                  <div>
-                    <h3 className="text-3xl font-serif text-gray-900 mb-2">1999</h3>
-                    <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                      First to manufacture split AC indoor units and cross flow fans in India.
-                    </p>
+                  <div className="text-left">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Early 2000s</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">Introduced micro channel heat exchangers and header pipes.</p>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* Milestone 2: Early 2000s */}
-                <motion.div 
-                  className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl"
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                >
-                  <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
-                    <Play size={20} fill="currentColor" />
+                {/* Milestone 3 */}
+                <div className="relative flex flex-row lg:flex-col items-center lg:items-start gap-6 lg:gap-4">
+                   <div className="w-14 h-14 rounded-full bg-blue-900 text-white flex items-center justify-center shadow-lg shrink-0 z-10 border-4 border-white">
+                      <Play size={20} fill="currentColor" />
                   </div>
-                  <div>
-                    <h3 className="text-3xl font-serif text-gray-900 mb-2">Early 2000s</h3>
-                    <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                      Introduced micro channel heat exchangers and header pipes.
-                    </p>
+                  <div className="text-left">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Present</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">First to launch Made-in-India smart toilets with intelligent automation.</p>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* Milestone 3: Present */}
-                <motion.div 
-                  className="flex flex-row md:flex-col items-start gap-6 md:gap-4 bg-white md:bg-transparent p-4 md:p-0 rounded-xl"
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                >
-                  <div className="shrink-0 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center shadow-lg shadow-blue-200 text-white">
-                    <Play size={20} fill="currentColor" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-serif text-gray-900 mb-2">Present</h3>
-                    <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                      First to launch and produce smart toilets in India, integrating intelligent flushing, bidet functions & hygienic automation.
-                    </p>
-                  </div>
-                </motion.div>
-
-              </motion.div>
+              </div>
             </div>
+
           </motion.div>
+
         </div>
       </div>
     </section>

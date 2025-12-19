@@ -6,43 +6,29 @@ const HeroSection = () => {
   const slides = [
     { 
       id: 1, 
-      desktopImage: "/banner/Aqua Breeze.png", 
-      mobileImage: "/Vertical/AquaBreze.png", 
+      desktopImage: "/banner2/AquaBreeze.png", 
+      mobileImage: "/banner2/AquaBreeze_V.png", 
       title: "", 
       subtitle: "" 
     },
     { 
       id: 2, 
-      desktopImage: "/banner/Cistern.png", 
-      mobileImage: "/Vertical/Cistern.png",
+      desktopImage: "/banner2/AquaLite.png", 
+      mobileImage: "/banner2/AquaLite_V.png",
       title: "", 
       subtitle: "" 
     },
     { 
       id: 3, 
-      desktopImage: "/banner/Lite.png", 
-      mobileImage: "/Vertical/AquaLite.png",
+      desktopImage: "/banner2/PureOne.png", 
+      mobileImage: "/banner2/PureOne_V.png", 
       title: "", 
       subtitle: "" 
     },
     { 
       id: 4, 
-      desktopImage: "/banner/Pureone.png", 
-      mobileImage: "/Vertical/PureOne.png", 
-      title: "", 
-      subtitle: "" 
-    },
-    { 
-      id: 5, 
-      desktopImage: "/banner/Sky.png", 
-      mobileImage: "/Vertical/Aqua Sky.png", 
-      title: "", 
-      subtitle: "" 
-    },
-    { 
-      id: 6, 
-      desktopImage: "/banner/Toilet Bidet.png", 
-      mobileImage: "/Vertical/Bidet.png",
+      desktopImage: "/banner2/AquaSky.png", 
+      mobileImage: "/banner2/AquaSKy_V.png", 
       title: "", 
       subtitle: "" 
     },

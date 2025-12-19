@@ -1,17 +1,17 @@
 import React from 'react';
 import { Smile, Droplets, ShieldCheck, Target, Sparkles } from 'lucide-react'; 
-import { motion } from 'framer-motion'; // 1. Import Framer Motion
+import { motion } from 'framer-motion'; 
 
 const ToiletBidetProduct = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    // Applied 'font-poppins'
+    <section className="py-24 bg-white overflow-hidden font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* FIXED: Changed 'items-center' to 'items-start' for top alignment */}
+        {/* Grid: Standard 2-column layout with equal gap */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           
-          {/* --- LEFT SIDE: IMAGE --- */}
-          {/* Animation: Slide In from Left */}
+          {/* --- LEFT SIDE: IMAGE (Square/Rounded) --- */}
           <motion.div 
             className="relative"
             initial={{ opacity: 0, x: -100 }}
@@ -19,23 +19,22 @@ const ToiletBidetProduct = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Background blob gray */}
+            {/* Background blob */}
             <div className="absolute -inset-4 bg-gray-200 rounded-full opacity-50 blur-3xl -z-10"></div>
             
-            <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-              {/* PLACEHOLDER IMAGE - Replace with your product image */}
+            {/* Image Container - Square/Rounded */}
+            <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200">
               <img 
                 src="/products/Bidet_W1 copy.png" 
                 alt="Toilet Bidet Attachment" 
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 aspect-square"
               />
             </div>
           </motion.div>
 
           {/* --- RIGHT SIDE: DESCRIPTION --- */}
-          {/* Animation: Slide In from Right */}
           <motion.div 
-            className="flex flex-col text-left"
+            className="flex flex-col text-left space-y-5"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -43,25 +42,26 @@ const ToiletBidetProduct = () => {
           >
             
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 self-start bg-black text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6">
+            <div className="inline-flex items-center gap-2 self-start bg-black text-white px-4 py-1.5 rounded-full text-sm font-bold mb-2">
               <Sparkles size={16} />
               <span>Toilet Bidet</span>
             </div>
 
-            {/* HEADLINE */}
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 uppercase tracking-tight">
+            {/* HEADLINE - Master Size, No Underline */}
+            <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 leading-tight">
               Non-Electric <br />
-              <span className="text-gray-900 underline decoration-4 decoration-gray-400 underline-offset-4">
+              {/* Removed underline, kept font-medium */}
+              <span className="font-medium text-gray-900">
                  Bidet Attachment
               </span>
             </h2>
             
-            {/* Sub-headline */}
-            <p className="text-xl text-gray-500 font-medium mb-8 italic">
+            {/* Sub-headline - No Italic, Master Body Size */}
+            <p className="text-gray-500 text-base md:text-md font-medium">
               "With Dual Nozzle For Ultimate Cleaning."
             </p>
 
-            {/* FEATURE ICONS - Staggered Animation */}
+            {/* FEATURE ICONS */}
             <motion.div 
               className="grid grid-cols-2 gap-x-6 gap-y-8 mb-10 border-y border-gray-100 py-8"
               initial="hidden"
@@ -85,7 +85,7 @@ const ToiletBidetProduct = () => {
                   <Smile size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Comfort</h4>
+                  <h4 className="font-semibold text-gray-900">Comfort</h4>
                   <p className="text-sm text-gray-600 leading-snug mt-1">
                     Gentle, controlled water stream; adjustable pressure; hands-free.
                   </p>
@@ -101,7 +101,7 @@ const ToiletBidetProduct = () => {
                   <Droplets size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Water Efficiency</h4>
+                  <h4 className="font-semibold text-gray-900">Water Efficiency</h4>
                   <p className="text-sm text-gray-600 leading-snug mt-1">
                     Often uses less water because the spray is targeted and controlled.
                   </p>
@@ -117,7 +117,7 @@ const ToiletBidetProduct = () => {
                   <ShieldCheck size={24} />
                 </div>
                  <div>
-                  <h4 className="font-bold text-gray-900">Hygiene</h4>
+                  <h4 className="font-semibold text-gray-900">Hygiene</h4>
                   <p className="text-sm text-gray-600 leading-snug mt-1">
                     Minimal hand contact reduces contamination risk; often includes self-cleaning nozzles.
                   </p>
@@ -133,7 +133,7 @@ const ToiletBidetProduct = () => {
                   <Target size={24} />
                 </div>
                  <div>
-                  <h4 className="font-bold text-gray-900">Consistency</h4>
+                  <h4 className="font-semibold text-gray-900">Consistency</h4>
                   <p className="text-sm text-gray-600 leading-snug mt-1">
                     Water flow and spray angle are fixed and consistent every time.
                   </p>
@@ -142,12 +142,10 @@ const ToiletBidetProduct = () => {
 
             </motion.div>
 
-            {/* DETAILED TEXT */}
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+            {/* DETAILED TEXT - No Italics, Semibold Highlights */}
+            <div className="space-y-4 text-gray-600 text-base md:text-md leading-relaxed text-justify">
               <p>
-                Upgrade your bathroom experience with our 
-                <span className="text-gray-900 italic font-semibold"> Non-Electric Toilet Bidet</span>. 
-                Designed for simplicity and hygiene, it requires no electricity and fits seamlessly onto your existing toilet.
+                Upgrade your bathroom experience with our <span className="text-gray-900 font-medium">Non-Electric Toilet Bidet</span>. Designed for simplicity and hygiene, it requires no electricity and fits seamlessly onto your existing toilet.
               </p>
             </div>
 

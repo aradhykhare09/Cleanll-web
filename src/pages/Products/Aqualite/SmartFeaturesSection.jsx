@@ -6,10 +6,10 @@ const FeatureImage = ({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    // 'bg-gray-100' pehle se jagah le lega taaki layout jump na kare
+    // 'bg-gray-100' prevents layout shift
     <div className="aspect-4/3 rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative bg-gray-100 w-full h-full">
       
-      {/* SKELETON LOADER (Jab tak image load na ho) */}
+      {/* SKELETON LOADER */}
       <div 
         className={`absolute inset-0 bg-gray-200 animate-pulse z-10 transition-opacity duration-700 ${
           isLoaded ? 'opacity-0' : 'opacity-100'
@@ -20,8 +20,8 @@ const FeatureImage = ({ src, alt }) => {
       <img 
         src={src} 
         alt={alt}
-        loading="lazy" // IMPORTANT: Browser automatically lazy load karega
-        width="400"    // IMPORTANT: Browser ko size batana zaroori hai layout shift rokne ke liye
+        loading="lazy" 
+        width="400"    
         height="300"
         onLoad={() => setIsLoaded(true)}
         className={`w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 ease-in-out will-change-transform
@@ -38,7 +38,7 @@ const FeatureImage = ({ src, alt }) => {
 
 // --- 2. MAIN COMPONENT ---
 const SmartFeaturesSection = () => {
-  // Check karo ki paths bilkul sahi hain aur images public folder me hain
+  // Check that paths are correct
   const features = [
     {
       id: 1,
@@ -106,10 +106,11 @@ const SmartFeaturesSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    // Applied 'font-poppins' and 'py-24'
+    <section className="py-24 bg-white font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Section Heading */}
+        {/* Section Heading - Master Size, No Serif */}
         <motion.div 
           className="mb-16 text-center"
           initial={{ opacity: 0, y: -20 }}
@@ -117,10 +118,10 @@ const SmartFeaturesSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight">
-            Intelligent <span className="italic font-serif">Functions</span>
+          <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 uppercase tracking-tight">
+            Intelligent <span className="font-medium">Functions</span>
           </h2>
-          <div className="h-1 w-20 bg-black mx-auto mt-4"></div>
+          {/* Removed underline/divider */}
         </motion.div>
 
         {/* Features Grid */}
@@ -146,10 +147,12 @@ const SmartFeaturesSection = () => {
 
               {/* TEXT PART */}
               <div className="w-full sm:w-3/5">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:underline decoration-1 underline-offset-4">
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                {/* Desc - Updated to Master Body Size (text-md) */}
+                <p className="text-gray-600 text-base md:text-md leading-relaxed">
                   {feature.desc}
                 </p>
               </div>

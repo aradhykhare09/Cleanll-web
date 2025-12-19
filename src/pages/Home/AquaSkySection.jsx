@@ -5,39 +5,38 @@ import { motion } from 'framer-motion';
 
 const AquaSkySection = () => {
   return (
-    // Added 'font-poppins' to ensure Poppins is used throughout
-    <section className="py-24 bg-white overflow-hidden font-poppins">
+    <section className="py-12 bg-white overflow-hidden font-poppins mt-18">
       <div className="w-full max-w-360 mx-auto px-6 md:px-12">
         
-        {/* Changed grid ratio: Image col-span-7 (approx 60%), Text col-span-5 (approx 40%) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Grid: Standard 2-column layout with equal gap (Balanced) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           
-          {/* --- LEFT SIDE: IMAGE (Shifted Left & Bigger) --- */}
+          {/* --- LEFT SIDE: IMAGE (Square & Balanced) --- */}
           <motion.div 
-            className="lg:col-span-7 relative group"
+            className="relative group"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-             {/* Negative margin to pull image left and make it bigger */}
-            <div className="relative w-[110%] -ml-[10%] rounded-tr-[100px] rounded-bl-[100px] overflow-hidden">
-               
-               {/* Background Shape */}
-               <div className="absolute inset-0 bg-linear-to-r from-gray-200 to-gray-50 transform rotate-2 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700 -z-10"></div>
-               
-               {/* Image - Removed shadow and border */}
-               <img 
-                src="/Charts/AquaSky 3.png" 
-                alt="AquaSky Intelligent Toilet" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 aspect-16/10"
-              />
+             {/* Image Container - Square Aspect Ratio */}
+             <div className="relative w-full aspect-square rounded-tr-[100px] rounded-bl-[100px] overflow-hidden">
+                
+                {/* Background Shape */}
+                <div className="absolute inset-0 bg-linear-to-r from-gray-200 to-gray-50 transform rotate-2 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700 -z-10"></div>
+                
+                {/* Image - No Shadow/Border, Square */}
+                <img 
+                  src="/homeproduct/Aquasky.png" 
+                  alt="AquaSky Intelligent Toilet" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                />
             </div>
           </motion.div>
 
-          {/* --- RIGHT SIDE: CONTENT (Closer to Image) --- */}
+          {/* --- RIGHT SIDE: CONTENT --- */}
           <motion.div 
-            className="lg:col-span-5 flex flex-col text-left space-y-5 pl-4 lg:pl-0"
+            className="flex flex-col text-left space-y-5"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -47,13 +46,13 @@ const AquaSkySection = () => {
             {/* Heading */}
             <div>
               <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 leading-tight">
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#080aa1] to-[#c99d80] font-small"> 
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#080aa1] to-[#c99d80] font-medium"> 
                   AquaSky
                 </span>
               </h2>
             </div>
 
-            {/* Description - Merged into one paragraph */}
+            {/* Description */}
             <p className="text-gray-500 text-base md:text-md leading-relaxed text-justify">
               Experience a revolutionary innovation in bathroom design. The 
               <span className="text-gray-900 font-semibold"> AquaSky </span> 

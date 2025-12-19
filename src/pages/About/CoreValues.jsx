@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // 1. Import Framer Motion
+import { motion } from 'framer-motion'; 
 
 const CoreValues = () => {
   // Data from screenshot
@@ -48,7 +48,7 @@ const CoreValues = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15 // Cards ek ke baad ek aayenge (0.15s gap)
+        staggerChildren: 0.15 
       }
     }
   };
@@ -63,12 +63,13 @@ const CoreValues = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
+    // Applied 'font-poppins'
+    <section className="py-24 bg-white font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Section Title - Fade In */}
+        {/* Section Title - Master Size (3xl mobile, 5xl desktop), Font Light */}
         <motion.h2 
-          className="text-3xl md:text-4xl font-serif text-[#232323] font-semibold mb-12 uppercase tracking-wide"
+          className="text-3xl md:text-3xl lg:text-5xl text-[#232323] font-light mb-12 uppercase tracking-wide"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -77,7 +78,7 @@ const CoreValues = () => {
           Our Core Values
         </motion.h2>
 
-        {/* Values Grid - Staggered Animation */}
+        {/* Values Grid */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
@@ -89,7 +90,7 @@ const CoreValues = () => {
             <motion.div 
               key={value.id} 
               variants={cardVariants}
-              whileHover={{ y: -5 }} // Hover karne par card thoda upar uthega
+              whileHover={{ y: -5 }} 
               className="bg-[#f4f1ea] p-10 md:p-12 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group"
             >
               {/* IMAGE ICON CONTAINER */}
@@ -97,6 +98,7 @@ const CoreValues = () => {
                 <img 
                   src={value.icon} 
                   alt={value.title} 
+                  loading="lazy"
                   className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
               </div>
@@ -106,8 +108,8 @@ const CoreValues = () => {
                 {value.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-gray-600 leading-relaxed">
+              {/* Description - Master Size (text-md) */}
+              <p className="text-gray-600 text-base md:text-md leading-relaxed">
                 {value.desc}
               </p>
             </motion.div>

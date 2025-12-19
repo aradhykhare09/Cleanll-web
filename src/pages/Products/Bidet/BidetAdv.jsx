@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smile, Droplets, ShieldCheck, Target } from 'lucide-react'; // Import Lucide Icons
+import { Smile, Droplets, ShieldCheck, Target } from 'lucide-react'; 
 
-// --- FEATURE ICON COMPONENT (Now uses Lucide) ---
+// --- FEATURE ICON COMPONENT ---
 const FeatureIcon = ({ Icon }) => {
   return (
     <div className="w-16 h-16 shrink-0 flex items-center justify-center bg-gray-100 rounded-2xl text-gray-800 group-hover:bg-black group-hover:text-white transition-colors duration-300">
@@ -18,7 +18,7 @@ const BidetAdv = () => {
       id: 1,
       title: "Comfort",
       desc: "Gentle, controlled water stream; adjustable pressure; hands-free.",
-      icon: Smile // Lucide Icon Component pass kar rahe hain
+      icon: Smile 
     },
     {
       id: 2,
@@ -57,10 +57,11 @@ const BidetAdv = () => {
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    // Applied 'font-poppins' and 'py-24'
+    <section className="py-24 bg-white overflow-hidden font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Section Heading */}
+        {/* Section Heading - Master Size, No Serif */}
         <motion.div 
           className="mb-16 text-center"
           initial={{ opacity: 0, y: -20 }}
@@ -68,10 +69,10 @@ const BidetAdv = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight">
-            Advantages of <span className="italic font-serif">Bidet</span>
+          <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 uppercase tracking-tight">
+            Advantages of <span className="font-medium">Bidet</span>
           </h2>
-          <div className="h-1 w-20 bg-black mx-auto mt-4"></div>
+          {/* Removed divider to match clean look */}
         </motion.div>
 
         {/* Features Grid - 2 Columns */}
@@ -88,15 +89,16 @@ const BidetAdv = () => {
               className="flex flex-row gap-6 items-start group"
               variants={itemVariants}
             >
-              {/* ICON (Pass Icon Component) */}
+              {/* ICON */}
               <FeatureIcon Icon={item.icon} />
 
               {/* TEXT CONTENT */}
               <div className="flex flex-col space-y-2">
-                <h3 className="text-xl font-bold text-[#4a3b32] group-hover:text-black transition-colors">
+                <h3 className="text-xl font-medium text-gray-900 group-hover:text-black transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                {/* Updated to Master Body Size (text-md) */}
+                <p className="text-gray-600 text-base md:text-md leading-relaxed">
                   {item.desc}
                 </p>
               </div>
