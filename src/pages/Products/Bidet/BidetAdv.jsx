@@ -1,109 +1,119 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smile, Droplets, ShieldCheck, Target } from 'lucide-react';
-
-// --- FEATURE ICON COMPONENT ---
-const FeatureIcon = ({ Icon }) => {
-  return (
-    <div className="w-16 h-16 shrink-0 flex items-center justify-center bg-gray-100 rounded-2xl text-gray-800 group-hover:bg-black group-hover:text-white transition-colors duration-300">
-      <Icon size={32} strokeWidth={1.5} />
-    </div>
-  );
-};
 
 const BidetAdv = () => {
-  // Data with Lucide Components and Manual Line Breaks
-  const advantages = [
-    {
-      id: 1,
-      title: "Comfort",
-      desc: "Gentle, controlled water stream; adjustable pressure; hands-free.",
-      icon: Smile
-    },
-    {
-      id: 2,
-      title: "Water Efficiency",
-      // "targeted and controlled" ko next line pe kar diya hai
-      desc: <>Often uses less water because the spray is <br /> targeted and controlled.</>,
-      icon: Droplets
-    },
-    {
-      id: 3,
-      title: "Hygiene",
-      // "often includes..." ko next line pe kar diya hai
-      desc: <>Minimal hand contact reduces contamination risk; <br /> often includes self-cleaning nozzles.</>,
-      icon: ShieldCheck
-    },
-    {
-      id: 4,
-      title: "Consistency",
-      // "and consistent every time" ko next line pe kar diya hai
-      desc: <>Water flow and spray angle are fixed and <br /> consistent every time.</>,
-      icon: Target
-    }
-  ];
-
-  // Animation Variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section className="py-24 bg-white overflow-hidden font-poppins">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-16 md:py-24 bg-[#FDFBF7] font-poppins text-gray-800">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        {/* Section Heading */}
+        {/* Heading - Centered and Responsive */}
         <motion.div
-          className="mb-16 text-center"
+          className="mb-10 text-center border-b border-[#D4C5A9] pb-4"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 uppercase tracking-tight">
-            Advantages of <span className="font-medium">Bidet</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#8C7B5D] uppercase tracking-wide px-2">
+            Advantages of Bidet Over Jet Spray/Health Faucet
           </h2>
         </motion.div>
 
-        {/* Features Grid - 2 Columns */}
+        {/* Comparison Table */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          className="border border-[#D4C5A9] rounded-sm overflow-hidden bg-white shadow-sm"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
         >
-          {advantages.map((item) => (
-            <motion.div
-              key={item.id}
-              className="flex flex-row gap-6 items-start group"
-              variants={itemVariants}
-            >
-              {/* ICON */}
-              <FeatureIcon Icon={item.icon} />
+          {/* Desktop Header - Hidden on Mobile */}
+          <div className="hidden md:grid md:grid-cols-12 bg-[#F3EFE6] border-b border-[#D4C5A9] font-bold text-gray-900 text-lg">
+            <div className="col-span-2 p-5 border-r border-[#D4C5A9]">Aspect</div>
+            <div className="col-span-5 p-5 border-r border-[#D4C5A9] text-[#8C7B5D]">Bidet (seat attachment or built-in)</div>
+            <div className="col-span-5 p-5 text-gray-700">Jet Spray / Health Faucet</div>
+          </div>
 
-              {/* TEXT CONTENT */}
-              <div className="flex flex-col space-y-2 text-left">
-                <h3 className="text-xl font-medium text-gray-900 group-hover:text-black transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-base md:text-md leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          {/* Row 1: Comfort */}
+          <div className="flex flex-col md:grid md:grid-cols-12 border-b border-[#D4C5A9] bg-[#F9F6F0]">
+            <div className="p-4 md:p-5 md:col-span-2 font-semibold border-b md:border-b-0 md:border-r border-[#D4C5A9] bg-[#EAE4D3] md:bg-transparent flex items-center">
+              <span className="text-base md:text-lg">Comfort</span>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5 border-b md:border-b-0 md:border-r border-[#D4C5A9]">
+              <span className="md:hidden font-bold text-[#8C7B5D] block mb-1 text-sm uppercase">Bidet:</span>
+              <p className="text-gray-800">Gentle, controlled water stream; adjustable pressure; hands-free.</p>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5">
+              <span className="md:hidden font-bold text-gray-500 block mb-1 text-sm uppercase">Jet Spray:</span>
+              <p className="text-gray-600">Stronger, sometimes harsh water jet; requires manual aiming.</p>
+            </div>
+          </div>
+
+          {/* Row 2: Hygiene */}
+          <div className="flex flex-col md:grid md:grid-cols-12 border-b border-[#D4C5A9] bg-white">
+            <div className="p-4 md:p-5 md:col-span-2 font-semibold border-b md:border-b-0 md:border-r border-[#D4C5A9] bg-[#EAE4D3] md:bg-transparent flex items-center">
+              <span className="text-base md:text-lg">Hygiene</span>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5 border-b md:border-b-0 md:border-r border-[#D4C5A9]">
+              <span className="md:hidden font-bold text-[#8C7B5D] block mb-1 text-sm uppercase">Bidet:</span>
+              <p className="text-gray-800">Minimal hand contact reduces contamination risk; often includes self-cleaning nozzles.</p>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5">
+              <span className="md:hidden font-bold text-gray-500 block mb-1 text-sm uppercase">Jet Spray:</span>
+              <p className="text-gray-600">Requires you to hold and aim the nozzle, increasing the chance of contact with unclean surfaces.</p>
+            </div>
+          </div>
+
+          {/* Row 3: Consistency */}
+          <div className="flex flex-col md:grid md:grid-cols-12 border-b border-[#D4C5A9] bg-[#F9F6F0]">
+            <div className="p-4 md:p-5 md:col-span-2 font-semibold border-b md:border-b-0 md:border-r border-[#D4C5A9] bg-[#EAE4D3] md:bg-transparent flex items-center">
+              <span className="text-base md:text-lg">Consistency</span>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5 border-b md:border-b-0 md:border-r border-[#D4C5A9]">
+              <span className="md:hidden font-bold text-[#8C7B5D] block mb-1 text-sm uppercase">Bidet:</span>
+              <p className="text-gray-800">Water flow and spray angle are fixed and consistent every time.</p>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5">
+              <span className="md:hidden font-bold text-gray-500 block mb-1 text-sm uppercase">Jet Spray:</span>
+              <p className="text-gray-600">Angle and pressure vary based on user’s hand control; can be messy.</p>
+            </div>
+          </div>
+
+          {/* Row 4: Water Efficiency */}
+          <div className="flex flex-col md:grid md:grid-cols-12 border-b border-[#D4C5A9] bg-white">
+            <div className="p-4 md:p-5 md:col-span-2 font-semibold border-b md:border-b-0 md:border-r border-[#D4C5A9] bg-[#EAE4D3] md:bg-transparent flex items-center">
+              <span className="text-base md:text-lg">Water Efficiency</span>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5 border-b md:border-b-0 md:border-r border-[#D4C5A9]">
+              <span className="md:hidden font-bold text-[#8C7B5D] block mb-1 text-sm uppercase">Bidet:</span>
+              <p className="text-gray-800">Often uses less water because the spray is targeted and controlled.</p>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5">
+              <span className="md:hidden font-bold text-gray-500 block mb-1 text-sm uppercase">Jet Spray:</span>
+              <p className="text-gray-600">Can waste more water due to overspray or high-pressure use.</p>
+            </div>
+          </div>
+
+          {/* Row 5: Accessibility */}
+          <div className="flex flex-col md:grid md:grid-cols-12 border-b border-[#D4C5A9] bg-[#F9F6F0]">
+            <div className="p-4 md:p-5 md:col-span-2 font-semibold border-b md:border-b-0 md:border-r border-[#D4C5A9] bg-[#EAE4D3] md:bg-transparent flex items-center">
+              <span className="text-base md:text-lg">Accessibility</span>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5 border-b md:border-b-0 md:border-r border-[#D4C5A9]">
+              <span className="md:hidden font-bold text-[#8C7B5D] block mb-1 text-sm uppercase">Bidet:</span>
+              <p className="text-gray-800">Easier for elderly, disabled, or those with limited mobility, no need to twist or reach.</p>
+            </div>
+            <div className="p-4 md:p-5 md:col-span-5">
+              <span className="md:hidden font-bold text-gray-500 block mb-1 text-sm uppercase">Jet Spray:</span>
+              <p className="text-gray-600">Can be difficult for people with mobility or grip issues to operate.</p>
+            </div>
+          </div>
+
+          {/* Summary / In Short */}
+          <div className="p-6 md:p-8 bg-[#F3EFE6] text-sm md:text-base leading-relaxed text-gray-800">
+            <strong>In Short:</strong> A bidet is cleaner, more comfortable, and more consistent, while a jet spray/health faucet is cheaper and easier to install but less hygienic and can be messy. Many people who switch to a bidet say it feels like an “upgrade” in both cleanliness & comfort.
+          </div>
+
         </motion.div>
 
       </div>

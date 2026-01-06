@@ -18,8 +18,8 @@ const HeroSection = () => {
   const slides = [
     { 
       id: 1, 
-      desktopImage: "/banner2/AquaBreeze.webp", 
-      mobileImage: "/banner2/AquaBreeze_V.webp", 
+      desktopImage: "/banner2/Footer Banner.webp", 
+      mobileImage: "/banner2/Footer Banner_V.webp", 
       title: "", 
       subtitle: "" 
     },
@@ -41,6 +41,13 @@ const HeroSection = () => {
       id: 4, 
       desktopImage: "/banner2/AquaSky.webp", 
       mobileImage: "/banner2/AquaSKy_V.webp", 
+      title: "", 
+      subtitle: "" 
+    },
+   { 
+      id: 5, 
+      desktopImage: "/banner2/AquaBreeze.webp", 
+      mobileImage: "/banner2/AquaBreeze_V.webp", 
       title: "", 
       subtitle: "" 
     },
