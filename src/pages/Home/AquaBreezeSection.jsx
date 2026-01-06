@@ -63,8 +63,10 @@ const AquaBreezeSection = () => {
                 
                 {/* Image - No Shadow/Border, Square */}
                 <img 
-                  src="/homeproduct/AquaBreeze.png" 
-                  alt="AquaBreeze Smart Toilet" 
+                  src="/homeproduct/AquaBreeze.webp" 
+                  alt="AquaBreeze Smart Toilet"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                 />
             </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeroSection from './HeroSection'
 import AquaSkySection from './AquaSkySection'
 import AquaBreezeSection from './AquaBreezeSection'
@@ -10,6 +10,10 @@ import BannerImage from './BannerImage'
 
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Cleanll - Home';
+  }, []);
+
   return (
     <div>
       <HeroSection/>

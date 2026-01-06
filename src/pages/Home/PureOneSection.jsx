@@ -63,8 +63,10 @@ const PureOneSection = () => {
                 
                 {/* Image - No Shadow/Border, Square */}
                 <img 
-                  src="/homeproduct/PureOne.png" 
-                  alt="PureOne Tankless Toilet" 
+                  src="/homeproduct/PureOne.webp" 
+                  alt="PureOne Tankless Toilet"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                 />
             </div>

@@ -1,34 +1,46 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 
+// Preload critical images for better performance
+const preloadImages = (imageUrls) => {
+  imageUrls.forEach((url) => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = url;
+    link.type = 'image/webp';
+    document.head.appendChild(link);
+  });
+};
+
 const HeroSection = () => {
   
   const slides = [
     { 
       id: 1, 
-      desktopImage: "/banner2/AquaBreeze.png", 
-      mobileImage: "/banner2/AquaBreeze_V.png", 
+      desktopImage: "/banner2/AquaBreeze.webp", 
+      mobileImage: "/banner2/AquaBreeze_V.webp", 
       title: "", 
       subtitle: "" 
     },
     { 
       id: 2, 
-      desktopImage: "/banner2/AquaLite.png", 
-      mobileImage: "/banner2/AquaLite_V.png",
+      desktopImage: "/banner2/AquaLite.webp", 
+      mobileImage: "/banner2/AquaLite_V.webp",
       title: "", 
       subtitle: "" 
     },
     { 
       id: 3, 
-      desktopImage: "/banner2/PureOne.png", 
-      mobileImage: "/banner2/PureOne_V.png", 
+      desktopImage: "/banner2/PureOne.webp", 
+      mobileImage: "/banner2/PureOne_V.webp", 
       title: "", 
       subtitle: "" 
     },
     { 
       id: 4, 
-      desktopImage: "/banner2/AquaSky.png", 
-      mobileImage: "/banner2/AquaSKy_V.png", 
+      desktopImage: "/banner2/AquaSky.webp", 
+      mobileImage: "/banner2/AquaSKy_V.webp", 
       title: "", 
       subtitle: "" 
     },
@@ -39,6 +51,26 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true); 
   const transitionRef = useRef(null);
+
+  // Preload first banner images on mount for instant display
+  useEffect(() => {
+    // Preload first slide images for immediate display
+    preloadImages([
+      slides[0].desktopImage,
+      slides[0].mobileImage,
+    ]);
+    
+    // Preload remaining slides after a delay
+    const timer = setTimeout(() => {
+      const remainingImages = slides.slice(1).flatMap(s => [s.desktopImage, s.mobileImage]);
+      remainingImages.forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -101,7 +133,10 @@ const HeroSection = () => {
             {/* hidden on mobile, block on medium screens and up */}
             <img 
               src={slide.desktopImage} 
-              alt={slide.title} 
+              alt={slide.title || "Banner Image"}
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "auto"}
+              decoding="async"
               className="hidden md:block w-full h-full object-cover"
             />
 
@@ -109,7 +144,10 @@ const HeroSection = () => {
             {/* block on mobile, hidden on medium screens and up */}
             <img 
               src={slide.mobileImage} 
-              alt={slide.title} 
+              alt={slide.title || "Banner Image"}
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "auto"}
+              decoding="async"
               className="block md:hidden w-full h-full object-cover"
             />
             

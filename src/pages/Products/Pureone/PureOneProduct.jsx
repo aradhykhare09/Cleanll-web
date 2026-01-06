@@ -1,18 +1,18 @@
 import React from 'react';
-import { Shield, Droplets, Smile, ShieldCheck } from 'lucide-react'; 
-import { motion } from 'framer-motion'; 
+import { Shield, Droplets, Smile, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const PureOneProduct = () => {
   return (
     // Applied 'font-poppins'
     <section className="py-24 bg-white overflow-hidden font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Grid: Standard 2-column layout with equal gap */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          
+
           {/* --- LEFT SIDE: IMAGE (Square/Rounded) --- */}
-          <motion.div 
+          <motion.div
             className="relative"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -21,26 +21,29 @@ const PureOneProduct = () => {
           >
             {/* Background blob */}
             <div className="absolute -inset-4 bg-gray-200 rounded-full opacity-50 blur-3xl -z-10"></div>
-            
+
             {/* Image Container - Square/Rounded */}
             <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200">
-              <img 
-                src="/products/PureOne_W1.png" 
-                alt="Pure One AutoFlush Bidet" 
+              <img
+                src="/products/PureOne_W1.webp"
+                alt="Pure One AutoFlush Bidet"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 aspect-square"
               />
             </div>
           </motion.div>
 
           {/* --- RIGHT SIDE: DESCRIPTION --- */}
-          <motion.div 
+          <motion.div
             className="flex flex-col text-left space-y-5"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            
+
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 self-start bg-black text-white px-4 py-1.5 rounded-full text-sm font-bold mb-2">
               <Shield size={16} />
@@ -55,14 +58,14 @@ const PureOneProduct = () => {
                 Heightened Living.
               </span>
             </h2>
-            
+
             {/* Sub-headline - No Italic, Master Body Size */}
             <p className="text-gray-500 text-base md:text-md font-medium">
               "India's First Non Electric Offseat Auto Flushing Toilet With Bidet."
             </p>
 
             {/* FEATURE ICONS */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-3 gap-4 border-y border-gray-100 py-6 my-2"
               initial="hidden"
               whileInView="visible"
@@ -75,46 +78,44 @@ const PureOneProduct = () => {
                 }
               }}
             >
-              <motion.div 
+              <motion.div
                 className="flex flex-col items-center text-center gap-2 group"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               >
                 <div className="p-3 bg-gray-100 text-gray-900 rounded-2xl group-hover:bg-black group-hover:text-white transition-colors duration-300">
                   <ShieldCheck size={20} />
                 </div>
-                <span className="text-xs font-bold text-gray-700">Ultimate<br/>Hygiene</span>
+                <span className="text-xs font-bold text-gray-700">Ultimate<br />Hygiene</span>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-col items-center text-center gap-2 group"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               >
-                 <div className="p-3 bg-gray-100 text-gray-900 rounded-2xl group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                <div className="p-3 bg-gray-100 text-gray-900 rounded-2xl group-hover:bg-black group-hover:text-white transition-colors duration-300">
                   <Droplets size={20} />
                 </div>
-                <span className="text-xs font-bold text-gray-700">Refreshing<br/>Clean</span>
+                <span className="text-xs font-bold text-gray-700">Refreshing<br />Clean</span>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-col items-center text-center gap-2 group"
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               >
-                 <div className="p-3 bg-gray-100 text-gray-900 rounded-2xl group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                <div className="p-3 bg-gray-100 text-gray-900 rounded-2xl group-hover:bg-black group-hover:text-white transition-colors duration-300">
                   <Smile size={20} />
                 </div>
-                <span className="text-xs font-bold text-gray-700">Confidence<br/>Boost</span>
+                <span className="text-xs font-bold text-gray-700">Confidence<br />Boost</span>
               </motion.div>
             </motion.div>
 
             {/* DETAILED TEXT - No Italics, Semibold Highlights */}
-            <div className="space-y-4 text-gray-600 text-base md:text-md leading-relaxed text-justify">
+            <div className=" text-gray-600 text-base md:text-md leading-relaxed text-justify">
               <p>
-                <strong className='font-semibold'>Engineered to fit seamlessly on any toilet seat.</strong> Our AutoFlush TankLess Bidet Toilet is designed to redefine your bathroom experience.
+                <strong className='font-semibold'>Engineered to fit seamlessly on any toilet seat.</strong> Our AutoFlush TankLess Bidet Toilet is designed to redefine your bathroom experience. It transforms daily cleansing into a <span className="text-gray-900 font-medium">healthier</span>, <span className="text-gray-900 font-medium">fresher</span>, and more <span className="text-gray-900 font-medium">confident experience</span>, every single day.
               </p>
-              
-              <p>
-                It transforms daily cleansing into a <span className="text-gray-900 font-medium">healthier</span>, <span className="text-gray-900 font-medium">fresher</span>, and more <span className="text-gray-900 font-medium">confident experience</span>, every single day.
-              </p>
+
+
             </div>
 
           </motion.div>

@@ -27,8 +27,10 @@ const AquaHideSection = () => {
               
               {/* Image - No Shadow/Border, Square */}
               <img 
-                src="/homeproduct/Cisterne.png" 
-                alt="AquaHide Concealed Cistern" 
+                src="/homeproduct/Cisterne.webp" 
+                alt="AquaHide Concealed Cistern"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
               />
             </div>

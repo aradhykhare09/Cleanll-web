@@ -8,37 +8,37 @@ const CoreValues = () => {
       id: 1,
       title: "First Mover Innovation",
       desc: "Consistently pioneering new technologies and user-focused features for the Indian market.",
-      icon: "/about/A.png" 
+      icon: "/about/A.webp" 
     },
     {
       id: 2,
       title: "Sustainability",
       desc: "Integrating eco-friendly practices in every step from design to production.",
-      icon: "/about/B.png" 
+      icon: "/about/B.webp" 
     },
     {
       id: 3,
       title: "Quality and Assurance",
       desc: "Every Cleanll product comes with robust quality checks, warranty, and guarantee.",
-      icon: "/about/C.png" 
+      icon: "/about/C.webp" 
     },
     {
       id: 4,
       title: "Smart Pricing",
       desc: "Offering premier technology while ensuring affordability for customers and partners.",
-      icon: "/about/D.png"  
+      icon: "/about/D.webp"  
     },
     {
       id: 5,
       title: "User-Centric Design",
       desc: "Crafted with real user needs in mind ensuring comfort, convenience, and intuitive functionality in every product.",
-      icon: "/about/E.png" 
+      icon: "/about/E.webp" 
     },
     {
       id: 6,
       title: "Long-Term Performance",
       desc: "Engineering products that deliver consistent, dependable performance for years, backed by trustworthy components & rigorous testing.",
-      icon: "/about/F.png" 
+      icon: "/about/F.webp" 
     }
   ];
 
@@ -69,7 +69,7 @@ const CoreValues = () => {
         
         {/* Section Title - Master Size (3xl mobile, 5xl desktop), Font Light */}
         <motion.h2 
-          className="text-3xl md:text-3xl lg:text-5xl text-[#232323] font-light mb-12 uppercase tracking-wide"
+          className="text-3xl md:text-3xl lg:text-4xl text-[#232323] font-light mb-12 uppercase tracking-wide"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -99,6 +99,7 @@ const CoreValues = () => {
                   src={value.icon} 
                   alt={value.title} 
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
               </div>

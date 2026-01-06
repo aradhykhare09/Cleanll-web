@@ -63,8 +63,10 @@ const BidetSection = () => {
               
               {/* Image - No Shadow/Border, Square */}
               <img 
-                src="/homeproduct/ToiletBidet.png" 
-                alt="Non-Electric Toilet Bidet" 
+                src="/homeproduct/ToiletBidet.webp" 
+                alt="Non-Electric Toilet Bidet"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
               />
             </div>

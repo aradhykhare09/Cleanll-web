@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// --- SMART ICON COMPONENT ---
+// --- SIMPLE ICON COMPONENT (No breathing effect) ---
 const IconItem = ({ src, title }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -11,12 +11,10 @@ const IconItem = ({ src, title }) => {
       {/* Icon Circle */}
       <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full border border-black/10 flex items-center justify-center bg-white shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
         
-        {/* Skeleton Loader */}
-        <div 
-          className={`absolute inset-0 bg-gray-200 rounded-full animate-pulse transition-opacity duration-500 ${
-            isLoaded ? 'opacity-0' : 'opacity-100'
-          }`} 
-        />
+        {/* Skeleton - Only render when NOT loaded */}
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-gray-200 rounded-full" />
+        )}
         
         {/* Icon Image - Black Filter applied */}
         <img 
@@ -24,8 +22,8 @@ const IconItem = ({ src, title }) => {
           alt={title}
           loading="lazy"
           onLoad={() => setIsLoaded(true)}
-          className={`w-12 h-12 md:w-14 md:h-14 object-contain filter brightness-0 transition-all duration-500 ${
-            isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          className={`w-12 h-12 md:w-14 md:h-14 object-contain filter brightness-0 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
           }`} 
         />
       </div>
@@ -41,13 +39,13 @@ const IconItem = ({ src, title }) => {
 const IconShowcase = () => {
   // Data based on the blue banner screenshot
   const icons = [
-    { id: 1, title: "Hip Wash", src: "/bidet/1.png" },
-    { id: 2, title: "Feminine Wash", src: "/bidet/2.png" },
-    { id: 3, title: "Universal Fit", src: "/bidet/3.png" },
-    { id: 4, title: "Ultra Slim & Durable", src: "/bidet/4.png" },
-    { id: 5, title: "Non Electric", src: "/bidet/5.png" },
-    { id: 6, title: "(ABS) Solid Build", src: "/bidet/6.png" },
-    { id: 7, title: "Easy Installation", src: "/bidet/8.png" }
+    { id: 1, title: "Hip Wash", src: "/bidet/1.webp" },
+    { id: 2, title: "Feminine Wash", src: "/bidet/2.webp" },
+    { id: 3, title: "Universal Fit", src: "/bidet/3.webp" },
+    { id: 4, title: "Ultra Slim & Durable", src: "/bidet/4.webp" },
+    { id: 5, title: "Non Electric", src: "/bidet/5.webp" },
+    { id: 6, title: "(ABS) Solid Build", src: "/bidet/6.webp" },
+    { id: 7, title: "Easy Installation", src: "/bidet/8.webp" }
   ];
 
   // Staggered Animation

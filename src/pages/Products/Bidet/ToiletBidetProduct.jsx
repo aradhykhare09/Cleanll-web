@@ -25,8 +25,11 @@ const ToiletBidetProduct = () => {
             {/* Image Container - Square/Rounded */}
             <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200">
               <img 
-                src="/products/Bidet_W1 copy.png" 
-                alt="Toilet Bidet Attachment" 
+                src="/products/Bidet_W1 copy.webp" 
+                alt="Toilet Bidet Attachment"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 aspect-square"
               />
             </div>

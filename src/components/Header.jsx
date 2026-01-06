@@ -60,8 +60,11 @@ const Header = () => {
       <div className="flex-1 flex justify-start items-center gap-3 ml-4 md:ml-8">
         <Link to="/" onClick={closeMenu}> 
           <img 
-            src="/L2.png" 
-            alt="Cleanll Logo" 
+            src="/L2.webp" 
+            alt="Cleanll Logo"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="h-10 md:h-12 w-auto object-contain cursor-pointer" 
           />
         </Link>

@@ -9,40 +9,27 @@ const FoundersLegacy = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
-          {/* --- LEFT SIDE: IMAGES --- */}
-          {/* Height adjusted for responsiveness: h-[400px] on mobile, h-[500px] on desktop */}
+          {/* --- LEFT SIDE: SINGLE IMAGE --- */}
           <motion.div 
-            className="relative h-100 md:h-125 w-full"
+            className="relative h-[350px] md:h-[500px] lg:h-[600px] w-full"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Image 1: Background (2B.png) */}
-            {/* Mobile: Full Width, Desktop: 85% Width */}
-            <div className="absolute top-0 left-0 w-full lg:w-[85%] h-full rounded-3xl overflow-hidden z-0 transition-all duration-500">
+            {/* Single Legacy Image */}
+            <div className="w-full h-full rounded-2xl overflow-hidden">
                <img 
-                 src="/2B.png" 
-                 className="w-full h-full object-cover" 
-                 alt="Legacy Background" 
+                 src="/LEGACY.jpg" 
+                 alt="Cleanll Founder Legacy"
+                 loading="lazy"
+                 decoding="async"
+                 className="w-full h-full object-fill transform hover:scale-105 transition-transform duration-700" 
                />
             </div>
 
-            {/* Image 2: Overlay (2A.png) */}
-            {/* RESPONSIVE LOGIC:
-                - Mobile/Tablet: Centered (left-1/2 -translate-x-1/2)
-                - Desktop (lg): Right Aligned (right-0 translate-x-0 left-auto)
-            */}
-            <div className="absolute top-1/2 -translate-y-1/2 
-                            left-1/2 -translate-x-1/2 w-[70%] h-[50%] 
-                            lg:left-auto lg:right-0 lg:translate-x-0 lg:w-[55%] lg:h-[60%] 
-                            rounded-3xl overflow-hidden shadow-2xl z-10 transition-all duration-500 ease-in-out">
-               <img 
-                 src="/2A.png" 
-                 className="w-full h-full object-cover" 
-                 alt="Founder Detail" 
-               />
-            </div>
+            {/* Subtle decorative background element */}
+            <div className="absolute -inset-4 bg-blue-50 rounded-full opacity-30 blur-3xl -z-10"></div>
           </motion.div>
 
 
@@ -57,9 +44,8 @@ const FoundersLegacy = () => {
             
             {/* HEADING SECTION */}
             <div className="mb-10">
-              <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 leading-tight">
-                FOUNDER'S <br />
-                LEGACY
+              <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
+                FOUNDER'S LEGACY
               </h2>
             </div>
 

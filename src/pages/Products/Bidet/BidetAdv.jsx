@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smile, Droplets, ShieldCheck, Target } from 'lucide-react'; 
+import { Smile, Droplets, ShieldCheck, Target } from 'lucide-react';
 
 // --- FEATURE ICON COMPONENT ---
 const FeatureIcon = ({ Icon }) => {
@@ -12,30 +12,33 @@ const FeatureIcon = ({ Icon }) => {
 };
 
 const BidetAdv = () => {
-  // Data with Lucide Components
+  // Data with Lucide Components and Manual Line Breaks
   const advantages = [
     {
       id: 1,
       title: "Comfort",
       desc: "Gentle, controlled water stream; adjustable pressure; hands-free.",
-      icon: Smile 
+      icon: Smile
     },
     {
       id: 2,
       title: "Water Efficiency",
-      desc: "Often uses less water because the spray is targeted and controlled.",
+      // "targeted and controlled" ko next line pe kar diya hai
+      desc: <>Often uses less water because the spray is <br /> targeted and controlled.</>,
       icon: Droplets
     },
     {
       id: 3,
       title: "Hygiene",
-      desc: "Minimal hand contact reduces contamination risk; often includes self-cleaning nozzles.",
+      // "often includes..." ko next line pe kar diya hai
+      desc: <>Minimal hand contact reduces contamination risk; <br /> often includes self-cleaning nozzles.</>,
       icon: ShieldCheck
     },
     {
       id: 4,
       title: "Consistency",
-      desc: "Water flow and spray angle are fixed and consistent every time.",
+      // "and consistent every time" ko next line pe kar diya hai
+      desc: <>Water flow and spray angle are fixed and <br /> consistent every time.</>,
       icon: Target
     }
   ];
@@ -57,12 +60,11 @@ const BidetAdv = () => {
   };
 
   return (
-    // Applied 'font-poppins' and 'py-24'
     <section className="py-24 bg-white overflow-hidden font-poppins">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
-        {/* Section Heading - Master Size, No Serif */}
-        <motion.div 
+
+        {/* Section Heading */}
+        <motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,11 +74,10 @@ const BidetAdv = () => {
           <h2 className="text-3xl md:text-3xl lg:text-5xl font-light text-gray-900 uppercase tracking-tight">
             Advantages of <span className="font-medium">Bidet</span>
           </h2>
-          {/* Removed divider to match clean look */}
         </motion.div>
 
         {/* Features Grid - 2 Columns */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12"
           variants={containerVariants}
           initial="hidden"
@@ -84,8 +85,8 @@ const BidetAdv = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           {advantages.map((item) => (
-            <motion.div 
-              key={item.id} 
+            <motion.div
+              key={item.id}
               className="flex flex-row gap-6 items-start group"
               variants={itemVariants}
             >
@@ -93,11 +94,10 @@ const BidetAdv = () => {
               <FeatureIcon Icon={item.icon} />
 
               {/* TEXT CONTENT */}
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-2 text-left">
                 <h3 className="text-xl font-medium text-gray-900 group-hover:text-black transition-colors">
                   {item.title}
                 </h3>
-                {/* Updated to Master Body Size (text-md) */}
                 <p className="text-gray-600 text-base md:text-md leading-relaxed">
                   {item.desc}
                 </p>

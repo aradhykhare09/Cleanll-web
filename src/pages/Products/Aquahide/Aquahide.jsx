@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SmartComfortProduct from './SmartComfortProduct'
-import CisternAdv from './Cisternadv'
+import CisternAdv from './CisternAdv'
 
 
 const Aquahide = () => {
+  useEffect(() => {
+    document.title = 'Cleanll | AquaHide';
+  }, []);
+
   return (
     <div>
       <SmartComfortProduct/>

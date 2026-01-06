@@ -27,8 +27,10 @@ const AquaSkySection = () => {
                 
                 {/* Image - No Shadow/Border, Square */}
                 <img 
-                  src="/homeproduct/Aquasky.png" 
-                  alt="AquaSky Intelligent Toilet" 
+                  src="/homeproduct/Aquasky.webp" 
+                  alt="AquaSky Intelligent Toilet"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                 />
             </div>

@@ -27,8 +27,10 @@ const AquaLiteSection = () => {
               
               {/* Image - No Shadow/Border, Square */}
               <img 
-                src="/homeproduct/AquaLite.png" 
-                alt="Aqualite Nature Edition" 
+                src="/homeproduct/AquaLite.webp" 
+                alt="Aqualite Nature Edition"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
               />
             </div>
