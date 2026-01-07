@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  
+  # Allow access to existing files
+  RewriteCond %{REQUEST_FILENAME} !-f
+  
+  # Commented out directory check because you have folders (like 'about') 
+  # that match your route names. We want those to go to index.html too.
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  
+  RewriteRule . /index.html [L]
+</IfModule>
