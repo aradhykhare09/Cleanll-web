@@ -55,7 +55,7 @@ const SmartComfortProduct = () => {
                 <Sparkles size={16} />
                 <span>AquaHide</span>
               </div>
-              <span className="text-gray-900 font-bold text-lg">MRP 5,500</span>
+              <span className="text-gray-900 font-bold text-lg">MRP ₹ 5,500/-</span>
             </div>
 
             {/* Heading */}

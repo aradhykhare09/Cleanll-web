@@ -32,49 +32,49 @@ const CisternAdv = () => {
       id: 1,
       title: "Space-Saving Design",
       desc: "A concealed cistern frees up visual and physical space, making even compact bathrooms look larger and more elegant.",
-      icon: "/cistern/1.png"
+      icon: "/cistern/1.webp"
     },
     {
       id: 2,
       title: "Clean & Hygienic",
       desc: "With fewer exposed parts and smooth surfaces, cleaning becomes effortless. Less clutter, more hygiene.",
-      icon: "/cistern/2.png"
+      icon: "/cistern/2.webp"
     },
     {
       id: 3,
       title: "Built for Durability",
       desc: "Engineered with robust, long-lasting materials to ensure leak-free performance and years of reliability.",
-      icon: "/cistern/3.png"
+      icon: "/cistern/3.webp"
     },
     {
       id: 4,
       title: "Universal Compatibility",
       desc: "Perfectly fits most wall-hung toilet systems, making installation simple and versatile.",
-      icon: "/cistern/4.png"
+      icon: "/cistern/4.webp"
     },
     {
       id: 5,
       title: "Ultra-Quiet Performance",
       desc: "Hidden inside the wall, the cistern reduces flushing noise offering a calm, premium bathroom experience.",
-      icon: "/cistern/5.png"
+      icon: "/cistern/5.webp"
     },
     {
       id: 6,
       title: "Invisible, Yet Elegant",
       desc: "Only the flush plate is visible. Giving your bathroom a minimalist, modern and luxurious appeal.",
-      icon: "/cistern/6.png"
+      icon: "/cistern/6.webp"
     },
     {
       id: 7,
       title: "Dual Flush Efficiency",
       desc: "Smart water-saving technology designed to reduce consumption without compromising power.",
-      icon: "/cistern/7.png"
+      icon: "/cistern/7.webp"
     },
     {
       id: 8,
       title: "Easy Maintenance",
       desc: "Front-access servicing via the flush plate ensures quick, hassle-free maintenance without opening walls.",
-      icon: "/cistern/8.png"
+      icon: "/cistern/8.webp"
     }
   ];
 

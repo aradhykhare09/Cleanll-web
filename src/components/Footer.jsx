@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Globe, FileText } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, Globe, FileText } from 'lucide-react';
 
 const Footer = () => {
   
@@ -42,10 +42,10 @@ const Footer = () => {
               Bringing innovation to your doorstep. We create seamless digital experiences with modern technology.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Facebook size={18} /></a>
-              <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Twitter size={18} /></a>
-              <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Instagram size={18} /></a>
-              <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Linkedin size={18} /></a>
+              <a href="https://www.facebook.com/Cleanllindia" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Facebook size={18} /></a>
+              <a href="https://x.com/CleanllIndia" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Twitter size={18} /></a>
+              <a href="https://www.instagram.com/cleanll.india?igsh=MWxpOHA1enZnYnFmaw==" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Instagram size={18} /></a>
+              <a href="https://www.youtube.com/channel/UC8ExkWPb2w-5gzw3zYhUFBw" className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors"><Youtube size={18} /></a>
             </div>
           </div>
 

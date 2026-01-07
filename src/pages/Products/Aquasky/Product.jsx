@@ -56,7 +56,7 @@ const Product = () => {
                 <Sparkles size={16} />
                 <span>AquaSky</span>
               </div>
-              <span className="text-gray-900 font-bold text-lg">MRP 75,000</span>
+              <span className="text-gray-900 font-bold text-lg">MRP ₹ 75,000/-</span>
             </div>
 
             {/* Heading */}

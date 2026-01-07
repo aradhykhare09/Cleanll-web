@@ -91,7 +91,7 @@ const FeaturesSection = () => {
       id: 9,
       title: "UV Sterilization",
       desc: "After using the toilet, the system automatically closes and opens the sterilization function for ultimate hygiene.",
-      image: "/aquasky/Aquasky_E.png"
+      image: "/aquasky/Aquasky_E.webp"
     }
   ];
 

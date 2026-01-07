@@ -25,32 +25,33 @@ const HeroSection = () => {
     },
     { 
       id: 2, 
-      desktopImage: "/banner2/AquaLite.webp", 
-      mobileImage: "/banner2/AquaLite_V.webp",
+      desktopImage: "/banner2/Aquasky.webp", 
+      mobileImage: "/banner2/Aquasky2.webp", 
       title: "", 
       subtitle: "" 
     },
     { 
       id: 3, 
-      desktopImage: "/banner2/PureOne.webp", 
-      mobileImage: "/banner2/PureOne_V.webp", 
+      desktopImage: "/banner2/AquaBreeze.webp", 
+      mobileImage: "/banner2/AquaBreeze2.webp", 
       title: "", 
       subtitle: "" 
     },
     { 
       id: 4, 
-      desktopImage: "/banner2/AquaSky.webp", 
-      mobileImage: "/banner2/AquaSKy_V.webp", 
+      desktopImage: "/banner2/AquaLite.webp", 
+      mobileImage: "/banner2/AquaLite2.webp",
       title: "", 
       subtitle: "" 
     },
-   { 
+    { 
       id: 5, 
-      desktopImage: "/banner2/AquaBreeze.webp", 
-      mobileImage: "/banner2/AquaBreeze_V.webp", 
+      desktopImage: "/banner2/PureOne.webp", 
+      mobileImage: "/banner2/PureOne_V.webp", 
       title: "", 
       subtitle: "" 
     },
+   
   ];
 
   const extendedSlides = [...slides, slides[0]];

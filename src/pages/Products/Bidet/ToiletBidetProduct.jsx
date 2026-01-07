@@ -55,7 +55,7 @@ const ToiletBidetProduct = () => {
                 <Sparkles size={16} />
                 <span>Toilet Bidet</span>
               </div>
-              <span className="text-gray-900 font-bold text-lg">MRP 3,500</span>
+              <span className="text-gray-900 font-bold text-lg">MRP ₹ 3,500/-</span>
             </div>
 
             {/* Heading */}

@@ -51,7 +51,7 @@ const SpaceProduct = () => {
                 <Rocket size={16} />
                 <span>AquaBreeze</span>
               </div>
-              <span className="text-gray-900 font-bold text-lg">MRP 70,000</span>
+              <span className="text-gray-900 font-bold text-lg">MRP ₹ 70,000/-</span>
             </div>
 
             {/* Heading */}
