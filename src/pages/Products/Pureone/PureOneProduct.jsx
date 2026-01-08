@@ -55,7 +55,7 @@ const PureOneProduct = () => {
                 <Shield size={16} />
                 <span>PureOne</span>
               </div>
-              <span className="text-gray-900 font-bold text-lg">MRP ₹ 3,50,000/-</span>
+              <span className="text-gray-900 font-bold text-lg">MRP ₹ 35,000/-</span>
             </div>
 
             {/* Heading */}
